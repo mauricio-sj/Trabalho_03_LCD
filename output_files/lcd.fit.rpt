@@ -1,5 +1,5 @@
 Fitter report for lcd
-Thu Sep 23 23:01:44 2021
+Thu Sep 23 23:08:14 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 23 23:01:44 2021       ;
+; Fitter Status                      ; Successful - Thu Sep 23 23:08:14 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; lcd                                         ;
 ; Top-level Entity Name              ; top                                         ;
@@ -1641,10 +1641,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/output_files/lcd.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 6019 megabytes
-    Info: Processing ended: Thu Sep 23 23:01:45 2021
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Peak virtual memory: 6017 megabytes
+    Info: Processing ended: Thu Sep 23 23:08:15 2021
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:33
 
 
 +----------------------------+

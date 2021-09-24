@@ -1,16 +1,16 @@
 |top
 sysclk => sysclk.IN2
 push_button => push_button.IN2
-rs <= lcd:lcd.rs
-e <= lcd:lcd.e
-d[0] <= lcd:lcd.d
-d[1] <= lcd:lcd.d
-d[2] <= lcd:lcd.d
-d[3] <= lcd:lcd.d
-d[4] <= lcd:lcd.d
-d[5] <= lcd:lcd.d
-d[6] <= lcd:lcd.d
-d[7] <= lcd:lcd.d
+rs << lcd:lcd.rs
+e << lcd:lcd.e
+d[0] << lcd:lcd.d
+d[1] << lcd:lcd.d
+d[2] << lcd:lcd.d
+d[3] << lcd:lcd.d
+d[4] << lcd:lcd.d
+d[5] << lcd:lcd.d
+d[6] << lcd:lcd.d
+d[7] << lcd:lcd.d
 
 
 |top|lcd:lcd
