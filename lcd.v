@@ -1,5 +1,3 @@
-
-
 module lcd(
   clock,
   internal_reset,
@@ -84,7 +82,7 @@ always @(posedge clock) begin
   if (data_ready) begin
     start <= 1'b1;
   end
-  if (internal_reset) begin
+  else if (internal_reset) begin
     state <= 5'b00000;
     counter_clear <= 1'b1;
     start <= 1'b0;
@@ -93,7 +91,7 @@ always @(posedge clock) begin
 
 // contador
 
-  if (counter_clear) begin
+  else if (counter_clear) begin
     count <= 24'h000000;
     counter_clear <= 1'b0;  
     flag_50ns  <= 1'b0;
@@ -332,7 +330,7 @@ case (state)
       d  <= d_in[7:0];                  // read the data value input 
       busy_flag <= 1'b1;                // set the busy flag
       end  
-    if (flag_50ns && busy_flag) begin   // if 50ns have elapsed
+    else if (flag_50ns && busy_flag) begin   // if 50ns have elapsed
        counter_clear <= 1'b1;           // clear the counter
        state <= STATE24;                // advance to the next state
        end
@@ -456,7 +454,7 @@ module rom (
 rom_in   , // Address input
 rom_out    // Data output
 );
-input [3:0] rom_in;
+input [5:0] rom_in;
 output [8:0] rom_out;
 
 reg [8:0] rom_out;
@@ -464,26 +462,94 @@ reg [8:0] rom_out;
 always @*
 begin
   case (rom_in) // hello world
-   4'h0: rom_out = 9'b101001000;
-   4'h1: rom_out = 9'b101100101;
-   4'h2: rom_out = 9'b101101100;
-   4'h3: rom_out = 9'b101101100;
-   4'h4: rom_out = 9'b101101111;
-   4'h5: rom_out = 9'b011000000;
-   4'h6: rom_out = 9'b101010111;
-   4'h7: rom_out = 9'b101101111;
-   4'h8: rom_out = 9'b101110010;
-   4'h9: rom_out = 9'b101101100;
-   4'ha: rom_out = 9'b101100100;
-   4'hb: rom_out = 9'b100100000;
-   4'hc: rom_out = 9'b100100000;
-   4'hd: rom_out = 9'b100100000;
-   4'he: rom_out = 9'b100100000;
-   4'hf: rom_out = 9'b100100000;
+   6'b000000: rom_out = {3'b001, rom_in};
+   6'b000001: rom_out = 9'b101001000;   
+   6'b000010: rom_out = {3'b001, rom_in};
+   6'b000011: rom_out = 9'b101100101;
+   6'b000100: rom_out = {3'b001, rom_in};
+   6'b000101: rom_out = 9'b101101100;
+   6'b000110: rom_out = {3'b001, rom_in};
+   6'b000111: rom_out = 9'b101101100;
+   6'b001000: rom_out = {3'b001, rom_in};
+   6'b001001: rom_out = 9'b101101111;
+   6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b100100000;
+   6'b001110: rom_out = {3'b001, rom_in};
+   6'b001111: rom_out = 9'b101010111;
+	6'b001000: rom_out = {3'b001, rom_in};
+   6'b001001: rom_out = 9'b101101111;
+   6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b101110010;
+   6'b001100: rom_out = {3'b001, rom_in};
+   6'b001101: rom_out = 9'b101101100;
+   6'b001110: rom_out = {3'b001, rom_in};
+   6'b001111: rom_out = 9'b101100100;
+	6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b100100000;
+	6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b100100000;
+	6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b100100000;
+	6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b100100000;
+	6'b001010: rom_out = {3'b001, rom_in};
+   6'b001011: rom_out = 9'b100100000;
    default: rom_out = 9'hXXX;
   endcase
 end
 
+//module rom (
+//last_switch_1_unidade ,
+//last_switch_1_dezena ,
+//rom_in   , // Address input
+//rom_out    // Data output
+//);
+//
+//parameter BITS_WIDTH;
+//input last_switch_1_unidade, last_switch_1_dezena;
+//input [5:0] rom_in;
+//output [8:0] rom_out;
+//
+//reg [8:0] rom_out;
+//     
+//always @*
+//begin
+//  case (rom_in) // hello world
+//   6'b000000: rom_out = {3'b001, rom_in};
+//   6'b000001: rom_out = 9'b101100101;
+//   6'b000010: rom_out = {3'b001, rom_in};
+//   6'b000011: rom_out = 9'b101101100;
+//   6'b000100: rom_out = {3'b001, rom_in};
+//   6'b000101: rom_out = 9'b101101100;
+//   6'b000110: rom_out = {3'b001, rom_in};
+//   6'b000111: rom_out = 9'b101101111;
+//   6'b001000: rom_out = {3'b001, rom_in};
+//   6'b001001: rom_out = 9'b101101100;
+//   6'b001010: rom_out = {3'b001, rom_in};
+//   6'b001011: rom_out = 9'b100100000;
+//   6'b001100: rom_out = {3'b001, rom_in};
+//   6'b001101: rom_out = last_switch_1_unidade;
+//   6'b001110: rom_out = {3'b001, rom_in};
+//   6'b001111: rom_out = {1'b1, last_switch_1_dezena};
+//   default: rom_out = 9'hXXX;
+//  endcase
+//end
 
+//   6'b000000: rom_out = 9'b101001000;
+//   6'b1: rom_out = 9'b101100101;
+//   6'b2: rom_out = 9'b101101100;
+//   6'b3: rom_out = 9'b101101100;
+//   6'b4: rom_out = 9'b101101111;
+//   6'b5: rom_out = 9'b111000000;
+//   6'b6: rom_out = 9'b101010111;
+//   6'b7: rom_out = 9'b101101111;
+//   6'b8: rom_out = 9'b101110010;
+//   6'b9: rom_out = 9'b101101100;
+//   6'ba: rom_out = 9'b101100100;
+//   6'bb: rom_out = 9'b100100000;
+//   6'bc: rom_out = 9'b100100000;
+//   6'bd: rom_out = 9'b100100000;
+//   6'be: rom_out = 9'b100100000;
+//   6'bf: rom_out = 9'b100100000;
 
 endmodule

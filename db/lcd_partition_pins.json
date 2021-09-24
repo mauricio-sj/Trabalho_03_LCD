@@ -40,11 +40,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "d[7]",
+					"name" : "sysclk",
 					"strict" : false
 				},
 				{
-					"name" : "sysclk",
+					"name" : "push_button",
 					"strict" : false
 				}
 			]

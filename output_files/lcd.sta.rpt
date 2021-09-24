@@ -1,5 +1,5 @@
 Timing Analyzer report for lcd
-Thu Sep 23 21:22:16 2021
+Thu Sep 23 23:01:53 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -49,9 +49,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  41. Report RSKM
  42. Unconstrained Paths Summary
  43. Clock Status Summary
- 44. Unconstrained Output Ports
+ 44. Unconstrained Input Ports
  45. Unconstrained Output Ports
- 46. Timing Analyzer Messages
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. Timing Analyzer Messages
 
 
 
@@ -120,7 +122,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 234.03 MHz ; 234.03 MHz      ; sysclk     ;      ;
+; 216.59 MHz ; 216.59 MHz      ; sysclk     ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -136,7 +138,7 @@ HTML report is unavailable in plain text report export.
 +--------+--------+-------------------+
 ; Clock  ; Slack  ; End Point TNS     ;
 +--------+--------+-------------------+
-; sysclk ; -3.273 ; -137.246          ;
+; sysclk ; -3.617 ; -166.529          ;
 +--------+--------+-------------------+
 
 
@@ -175,106 +177,106 @@ No paths to report.
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -3.273 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 4.191      ;
-; -3.264 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 4.182      ;
-; -3.081 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.999      ;
-; -3.060 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.546      ;
-; -3.040 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.511     ; 3.527      ;
-; -3.008 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 3.923      ;
-; -3.008 ; lcd:lcd|state.STATE23 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.925      ;
-; -2.992 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.478      ;
-; -2.984 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 3.899      ;
-; -2.972 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.511     ; 3.459      ;
-; -2.969 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.887      ;
-; -2.967 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.090     ; 3.875      ;
-; -2.932 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.851      ;
-; -2.924 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.843      ;
-; -2.920 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.406      ;
-; -2.913 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.830      ;
-; -2.903 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.511     ; 3.390      ;
-; -2.901 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.387      ;
-; -2.901 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.819      ;
-; -2.894 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.511     ; 3.381      ;
-; -2.892 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.810      ;
-; -2.883 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.510     ; 3.371      ;
-; -2.874 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 3.789      ;
-; -2.874 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.510     ; 3.362      ;
-; -2.873 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.792      ;
-; -2.863 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.782      ;
-; -2.855 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.774      ;
-; -2.847 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.333      ; 4.178      ;
-; -2.838 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.333      ; 4.169      ;
-; -2.827 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.743      ;
-; -2.818 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.734      ;
-; -2.794 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.713      ;
-; -2.787 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.706      ;
-; -2.777 ; lcd:lcd|count[2]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.084     ; 3.691      ;
-; -2.775 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.695      ;
-; -2.770 ; lcd:lcd|count[0]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.084     ; 3.684      ;
-; -2.767 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.687      ;
-; -2.766 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.686      ;
-; -2.763 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.511     ; 3.250      ;
-; -2.758 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.678      ;
-; -2.754 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.511     ; 3.241      ;
-; -2.744 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.663      ;
-; -2.743 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.662      ;
-; -2.740 ; lcd:lcd|counter_clear ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.513     ; 3.225      ;
-; -2.735 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.654      ;
-; -2.735 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.654      ;
-; -2.726 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.645      ;
-; -2.726 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.645      ;
-; -2.719 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.638      ;
-; -2.715 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.090     ; 3.623      ;
-; -2.711 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.043      ;
-; -2.710 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.042      ;
-; -2.710 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.626      ;
-; -2.709 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.627      ;
-; -2.702 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.618      ;
-; -2.702 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.034      ;
-; -2.701 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.033      ;
-; -2.676 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.089     ; 3.585      ;
-; -2.674 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.593      ;
-; -2.672 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 3.587      ;
-; -2.670 ; lcd:lcd|count[1]      ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.087     ; 3.581      ;
-; -2.667 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.584      ;
-; -2.665 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.581      ;
-; -2.662 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.578      ;
-; -2.659 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 3.574      ;
-; -2.655 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.333      ; 3.986      ;
-; -2.652 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.090     ; 3.560      ;
-; -2.650 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.567      ;
-; -2.643 ; lcd:lcd|count[1]      ; lcd:lcd|flag_40us     ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.562      ;
-; -2.641 ; lcd:lcd|count[1]      ; lcd:lcd|flag_200us    ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.560      ;
-; -2.637 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.557      ;
-; -2.636 ; lcd:lcd|state.STATE03 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.552      ;
-; -2.635 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.089     ; 3.544      ;
-; -2.630 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.550      ;
-; -2.628 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.548      ;
-; -2.627 ; lcd:lcd|rs            ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.543      ;
-; -2.626 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.545      ;
-; -2.621 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.541      ;
-; -2.621 ; lcd:lcd|rs            ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.537      ;
-; -2.597 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.515      ;
-; -2.593 ; lcd:lcd|state.STATE23 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.332      ; 3.923      ;
-; -2.592 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 3.507      ;
-; -2.589 ; lcd:lcd|count[3]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.084     ; 3.503      ;
-; -2.586 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.506      ;
-; -2.582 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.330      ; 3.910      ;
-; -2.577 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.497      ;
-; -2.569 ; lcd:lcd|flag_100ms    ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.084     ; 3.483      ;
-; -2.566 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.099     ; 3.465      ;
-; -2.557 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.476      ;
-; -2.552 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.471      ;
-; -2.546 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.098     ; 3.446      ;
-; -2.545 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.461      ;
-; -2.543 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.333      ; 3.874      ;
-; -2.543 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.462      ;
-; -2.541 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.323      ; 3.862      ;
-; -2.536 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.090     ; 3.444      ;
-; -2.519 ; lcd:lcd|state.STATE04 ; lcd:lcd|counter_clear ; sysclk       ; sysclk      ; 1.000        ; -0.096     ; 3.421      ;
-; -2.519 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 3.851      ;
-; -2.519 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.429      ;
-; -2.518 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 3.850      ;
+; -3.617 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 4.103      ;
+; -3.596 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.515      ;
+; -3.590 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.509      ;
+; -3.578 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.497      ;
+; -3.577 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.496      ;
+; -3.565 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.484      ;
+; -3.498 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.984      ;
+; -3.495 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 4.413      ;
+; -3.487 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.404      ;
+; -3.482 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.401      ;
+; -3.434 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.353      ;
+; -3.425 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 4.343      ;
+; -3.400 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.319      ;
+; -3.388 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.307      ;
+; -3.379 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.084     ; 4.293      ;
+; -3.376 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 4.294      ;
+; -3.375 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.292      ;
+; -3.346 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.263      ;
+; -3.335 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.821      ;
+; -3.333 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.250      ;
+; -3.330 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 4.246      ;
+; -3.326 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.243      ;
+; -3.291 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 4.211      ;
+; -3.283 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.202      ;
+; -3.283 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.084     ; 4.197      ;
+; -3.282 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 4.202      ;
+; -3.279 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 4.199      ;
+; -3.271 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.510     ; 3.759      ;
+; -3.271 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.190      ;
+; -3.270 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 4.190      ;
+; -3.266 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.514     ; 3.750      ;
+; -3.259 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.510     ; 3.747      ;
+; -3.247 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.514     ; 3.731      ;
+; -3.204 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; -0.098     ; 4.104      ;
+; -3.201 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 4.111      ;
+; -3.182 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.515      ;
+; -3.177 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.510      ;
+; -3.165 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.651      ;
+; -3.164 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.497      ;
+; -3.164 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.497      ;
+; -3.162 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.083     ; 4.077      ;
+; -3.158 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 4.078      ;
+; -3.157 ; lcd:lcd|state.STATE03 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 4.075      ;
+; -3.156 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.073      ;
+; -3.151 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.484      ;
+; -3.144 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 4.060      ;
+; -3.111 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.443      ;
+; -3.111 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.028      ;
+; -3.110 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 4.027      ;
+; -3.096 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 4.015      ;
+; -3.084 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.098     ; 3.984      ;
+; -3.082 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.414      ;
+; -3.072 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.990      ;
+; -3.071 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.403      ;
+; -3.068 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.401      ;
+; -3.063 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.981      ;
+; -3.055 ; lcd:lcd|rs            ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.090     ; 3.963      ;
+; -3.039 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.959      ;
+; -3.039 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.956      ;
+; -3.034 ; lcd:lcd|counter_clear ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.952      ;
+; -3.027 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.512     ; 3.513      ;
+; -3.020 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.353      ;
+; -3.017 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.936      ;
+; -3.011 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.343      ;
+; -3.008 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.925      ;
+; -2.999 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.331      ;
+; -2.991 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.323      ;
+; -2.987 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.320      ;
+; -2.985 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.905      ;
+; -2.981 ; lcd:lcd|rs            ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.891      ;
+; -2.978 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.310      ;
+; -2.974 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.335      ; 4.307      ;
+; -2.973 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.893      ;
+; -2.963 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.331      ; 4.292      ;
+; -2.962 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.294      ;
+; -2.961 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.331      ; 4.290      ;
+; -2.959 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.291      ;
+; -2.954 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.333      ; 4.285      ;
+; -2.950 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.282      ;
+; -2.930 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.262      ;
+; -2.922 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.098     ; 3.822      ;
+; -2.919 ; lcd:lcd|rs            ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.829      ;
+; -2.917 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.833      ;
+; -2.917 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.249      ;
+; -2.914 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.333      ; 4.245      ;
+; -2.911 ; lcd:lcd|state.00000   ; lcd:lcd|d[0]          ; sysclk       ; sysclk      ; 1.000        ; -0.507     ; 3.402      ;
+; -2.911 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.099     ; 3.810      ;
+; -2.910 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.334      ; 4.242      ;
+; -2.910 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.827      ;
+; -2.905 ; lcd:lcd|state.00000   ; lcd:lcd|d[6]          ; sysclk       ; sysclk      ; 1.000        ; -0.509     ; 3.394      ;
+; -2.905 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.824      ;
+; -2.899 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.510     ; 3.387      ;
+; -2.898 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.815      ;
+; -2.893 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.813      ;
+; -2.887 ; lcd:lcd|counter_clear ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.806      ;
+; -2.883 ; lcd:lcd|count[12]     ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.085     ; 3.796      ;
+; -2.881 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.801      ;
+; -2.878 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.336      ; 4.212      ;
+; -2.871 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.510     ; 3.359      ;
+; -2.871 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.099     ; 3.770      ;
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -285,104 +287,104 @@ No paths to report.
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.385 ; lcd:lcd|state.STATE06                   ; lcd:lcd|state.STATE06                   ; sysclk       ; sysclk      ; 0.000        ; 0.098      ; 0.669      ;
 ; 0.385 ; lcd:lcd|state.STATE17                   ; lcd:lcd|state.STATE17                   ; sysclk       ; sysclk      ; 0.000        ; 0.098      ; 0.669      ;
-; 0.385 ; lcd:lcd|state.STATE04                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.098      ; 0.669      ;
-; 0.386 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.097      ; 0.669      ;
-; 0.402 ; lcd:lcd|flag_200us                      ; lcd:lcd|flag_200us                      ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; lcd:lcd|state.STATE05                   ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; lcd:lcd|state.STATE25                   ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; lcd:lcd|flag_40us                       ; lcd:lcd|flag_40us                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; lcd:lcd|flag_5ms                        ; lcd:lcd|flag_5ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; lcd:lcd|flag_50ns                       ; lcd:lcd|flag_50ns                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; lcd:lcd|flag_250ns                      ; lcd:lcd|flag_250ns                      ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.386 ; lcd:lcd|state.00000                     ; lcd:lcd|state.00000                     ; sysclk       ; sysclk      ; 0.000        ; 0.097      ; 0.669      ;
+; 0.386 ; lcd:lcd|state.STATE24                   ; lcd:lcd|state.STATE24                   ; sysclk       ; sysclk      ; 0.000        ; 0.097      ; 0.669      ;
+; 0.402 ; lcd:lcd|state.STATE01                   ; lcd:lcd|state.STATE01                   ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; lcd:lcd|rs                              ; lcd:lcd|rs                              ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; lcd:lcd|flag_50ns                       ; lcd:lcd|flag_50ns                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; lcd:lcd|flag_40us                       ; lcd:lcd|flag_40us                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; lcd:lcd|state.STATE07                   ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; lcd:lcd|state.STATE05                   ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; controller:controller|rom_address[2]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[1]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; controller:controller|rom_address[3]    ; controller:controller|rom_address[3]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; controller:controller|halt              ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.403 ; lcd:lcd|d[3]                            ; lcd:lcd|d[3]                            ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; lcd:lcd|e                               ; lcd:lcd|e                               ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE08                   ; lcd:lcd|state.STATE08                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE24                   ; lcd:lcd|state.STATE24                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE01                   ; lcd:lcd|state.STATE01                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.00000                     ; lcd:lcd|state.00000                     ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE07                   ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE23                   ; lcd:lcd|state.STATE23                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|busy_flag                       ; lcd:lcd|busy_flag                       ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|flag_2ms                        ; lcd:lcd|flag_2ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; lcd:lcd|flag_100ms                      ; lcd:lcd|flag_100ms                      ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE21                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE20                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE19                   ; lcd:lcd|state.STATE19                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE18                   ; lcd:lcd|state.STATE18                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE03                   ; lcd:lcd|state.STATE03                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE02                   ; lcd:lcd|state.STATE02                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE16                   ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE15                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE13                   ; lcd:lcd|state.STATE13                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE12                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE11                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE08                   ; lcd:lcd|state.STATE08                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE04                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|flag_5ms                        ; lcd:lcd|flag_5ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|flag_250ns                      ; lcd:lcd|flag_250ns                      ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|flag_200us                      ; lcd:lcd|flag_200us                      ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|busy_flag                       ; lcd:lcd|busy_flag                       ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; lcd:lcd|state.STATE10                   ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; lcd:lcd|state.STATE09                   ; lcd:lcd|state.STATE09                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; controller:controller|data_ready        ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE22                   ; lcd:lcd|state.STATE22                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE16                   ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE12                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE18                   ; lcd:lcd|state.STATE18                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE15                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE21                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE14                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE11                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE20                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; lcd:lcd|start                           ; lcd:lcd|start                           ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; controller:controller|current_lcd_state ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
-; 0.450 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.716      ;
-; 0.610 ; controller:controller|halt              ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.076      ; 0.872      ;
-; 0.644 ; lcd:lcd|count[21]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.911      ;
-; 0.646 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.480      ; 1.312      ;
-; 0.647 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.480      ; 1.313      ;
-; 0.648 ; lcd:lcd|count[22]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.915      ;
-; 0.652 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[7]                            ; sysclk       ; sysclk      ; 0.000        ; 0.480      ; 1.318      ;
-; 0.655 ; lcd:lcd|count[1]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.922      ;
-; 0.656 ; lcd:lcd|count[17]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.923      ;
-; 0.656 ; lcd:lcd|count[13]                       ; lcd:lcd|count[13]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.923      ;
-; 0.658 ; lcd:lcd|count[18]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.925      ;
+; 0.403 ; controller:controller|halt              ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.669      ;
+; 0.407 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.674      ;
+; 0.437 ; controller:controller|current_lcd_state ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.703      ;
+; 0.488 ; lcd:lcd|counter_clear                   ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.754      ;
+; 0.495 ; controller:controller|rom_address[0]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.762      ;
+; 0.603 ; controller:controller|rom_address[2]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.870      ;
+; 0.651 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.917      ;
+; 0.653 ; lcd:lcd|count[19]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.920      ;
+; 0.655 ; lcd:lcd|count[15]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.922      ;
+; 0.656 ; lcd:lcd|count[20]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.923      ;
+; 0.656 ; lcd:lcd|count[7]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.922      ;
+; 0.656 ; lcd:lcd|count[1]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.922      ;
+; 0.658 ; lcd:lcd|count[5]                        ; lcd:lcd|count[5]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.924      ;
+; 0.659 ; lcd:lcd|count[21]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.926      ;
 ; 0.660 ; lcd:lcd|count[14]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.927      ;
-; 0.661 ; lcd:lcd|count[16]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.928      ;
-; 0.661 ; lcd:lcd|count[9]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.928      ;
-; 0.662 ; lcd:lcd|count[15]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.929      ;
+; 0.661 ; lcd:lcd|count[8]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.927      ;
+; 0.661 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.927      ;
+; 0.662 ; lcd:lcd|count[22]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.929      ;
+; 0.662 ; lcd:lcd|count[11]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.928      ;
+; 0.662 ; lcd:lcd|count[9]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.928      ;
+; 0.663 ; lcd:lcd|count[13]                       ; lcd:lcd|count[13]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.930      ;
+; 0.664 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.930      ;
 ; 0.666 ; lcd:lcd|count[23]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.933      ;
-; 0.666 ; lcd:lcd|count[12]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.933      ;
-; 0.666 ; lcd:lcd|count[10]                       ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.933      ;
-; 0.667 ; lcd:lcd|count[19]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.934      ;
-; 0.667 ; lcd:lcd|count[8]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.934      ;
-; 0.668 ; lcd:lcd|count[6]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.935      ;
-; 0.668 ; lcd:lcd|count[4]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.935      ;
-; 0.670 ; lcd:lcd|count[20]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.937      ;
-; 0.673 ; lcd:lcd|count[2]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.940      ;
-; 0.674 ; lcd:lcd|count[3]                        ; lcd:lcd|count[3]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.941      ;
-; 0.678 ; lcd:lcd|state.STATE13                   ; lcd:lcd|d[0]                            ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.944      ;
-; 0.680 ; lcd:lcd|count[5]                        ; lcd:lcd|count[5]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.947      ;
-; 0.683 ; lcd:lcd|count[11]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.950      ;
-; 0.684 ; lcd:lcd|count[7]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.951      ;
-; 0.697 ; lcd:lcd|state.STATE25                   ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.512      ; 1.395      ;
-; 0.699 ; lcd:lcd|count[0]                        ; lcd:lcd|count[0]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.966      ;
-; 0.702 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.969      ;
-; 0.718 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.479      ; 1.383      ;
-; 0.718 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.479      ; 1.383      ;
-; 0.727 ; lcd:lcd|busy_flag                       ; lcd:lcd|state.STATE23                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.993      ;
-; 0.730 ; lcd:lcd|flag_250ns                      ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.512      ; 1.428      ;
-; 0.776 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.483      ; 1.445      ;
-; 0.830 ; lcd:lcd|state.STATE03                   ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.511      ; 1.527      ;
-; 0.856 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.079      ; 1.121      ;
-; 0.883 ; lcd:lcd|busy_flag                       ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.083      ; 1.152      ;
-; 0.898 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.482      ; 1.566      ;
-; 0.906 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.173      ;
-; 0.907 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.082      ; 1.175      ;
-; 0.910 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.082      ; 1.178      ;
-; 0.929 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.078      ; 1.193      ;
-; 0.931 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE02                   ; sysclk       ; sysclk      ; 0.000        ; 0.078      ; 1.195      ;
-; 0.956 ; controller:controller|current_lcd_state ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.516      ; 1.658      ;
-; 0.961 ; lcd:lcd|count[21]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.228      ;
-; 0.973 ; lcd:lcd|count[13]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.240      ;
-; 0.973 ; lcd:lcd|count[1]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.240      ;
-; 0.974 ; lcd:lcd|count[17]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.241      ;
-; 0.975 ; lcd:lcd|count[22]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.242      ;
-; 0.978 ; lcd:lcd|flag_60us                       ; lcd:lcd|state.STATE13                   ; sysclk       ; sysclk      ; 0.000        ; 0.074      ; 1.238      ;
-; 0.979 ; lcd:lcd|count[9]                        ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.246      ;
-; 0.980 ; lcd:lcd|flag_60us                       ; lcd:lcd|state.STATE19                   ; sysclk       ; sysclk      ; 0.000        ; 0.074      ; 1.240      ;
-; 0.980 ; lcd:lcd|flag_5ms                        ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.073      ; 1.239      ;
-; 0.980 ; lcd:lcd|count[15]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.247      ;
-; 0.982 ; lcd:lcd|flag_5ms                        ; lcd:lcd|state.STATE03                   ; sysclk       ; sysclk      ; 0.000        ; 0.073      ; 1.241      ;
+; 0.666 ; lcd:lcd|count[18]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.933      ;
+; 0.667 ; lcd:lcd|count[10]                       ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.933      ;
+; 0.669 ; lcd:lcd|count[6]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.935      ;
+; 0.672 ; lcd:lcd|state.STATE09                   ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.938      ;
+; 0.674 ; lcd:lcd|count[2]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.940      ;
+; 0.675 ; lcd:lcd|count[3]                        ; lcd:lcd|count[3]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.941      ;
+; 0.682 ; lcd:lcd|count[12]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.949      ;
+; 0.683 ; controller:controller|halt              ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.949      ;
+; 0.685 ; lcd:lcd|count[17]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.952      ;
+; 0.687 ; lcd:lcd|count[0]                        ; lcd:lcd|count[0]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.953      ;
+; 0.691 ; lcd:lcd|count[16]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.958      ;
+; 0.691 ; lcd:lcd|count[4]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.957      ;
+; 0.695 ; controller:controller|rom_address[2]    ; controller:controller|rom_address[3]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.962      ;
+; 0.697 ; controller:controller|halt              ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.963      ;
+; 0.703 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.970      ;
+; 0.712 ; controller:controller|old_reset         ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 0.978      ;
+; 0.720 ; controller:controller|rom_address[3]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.987      ;
+; 0.725 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[1]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 0.992      ;
+; 0.742 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.008      ;
+; 0.746 ; controller:controller|rom_address[1]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.013      ;
+; 0.782 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.079      ; 1.047      ;
+; 0.783 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.079      ; 1.048      ;
+; 0.820 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.086      ;
+; 0.874 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.141      ;
+; 0.903 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.078      ; 1.167      ;
+; 0.941 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[0]                            ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.207      ;
+; 0.970 ; lcd:lcd|count[19]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.237      ;
+; 0.973 ; lcd:lcd|count[15]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.240      ;
+; 0.974 ; lcd:lcd|count[7]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.240      ;
+; 0.974 ; lcd:lcd|count[1]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.240      ;
+; 0.975 ; lcd:lcd|count[5]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.241      ;
+; 0.976 ; lcd:lcd|count[21]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.243      ;
+; 0.977 ; lcd:lcd|count[11]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.083      ; 1.246      ;
+; 0.980 ; lcd:lcd|count[13]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.247      ;
+; 0.980 ; lcd:lcd|count[9]                        ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.246      ;
+; 0.983 ; lcd:lcd|count[20]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.250      ;
+; 0.987 ; lcd:lcd|count[14]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.254      ;
+; 0.988 ; lcd:lcd|count[8]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.254      ;
+; 0.988 ; lcd:lcd|count[20]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.255      ;
+; 0.989 ; lcd:lcd|count[22]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.256      ;
+; 0.991 ; lcd:lcd|count[0]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.257      ;
+; 0.992 ; lcd:lcd|count[3]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.080      ; 1.258      ;
+; 0.992 ; lcd:lcd|count[14]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.081      ; 1.259      ;
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -392,13 +394,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                        ;
-+-----------+-----------------+------------+---------------------------------------------------------------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
-+-----------+-----------------+------------+---------------------------------------------------------------+
-; 258.6 MHz ; 250.0 MHz       ; sysclk     ; limit due to minimum period restriction (max I/O toggle rate) ;
-+-----------+-----------------+------------+---------------------------------------------------------------+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 236.29 MHz ; 236.29 MHz      ; sysclk     ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -407,7 +409,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------+------------------+
 ; Clock  ; Slack  ; End Point TNS    ;
 +--------+--------+------------------+
-; sysclk ; -2.867 ; -117.896         ;
+; sysclk ; -3.232 ; -144.938         ;
 +--------+--------+------------------+
 
 
@@ -416,7 +418,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-------+------------------+
 ; Clock  ; Slack ; End Point TNS    ;
 +--------+-------+------------------+
-; sysclk ; 0.339 ; 0.000            ;
+; sysclk ; 0.338 ; 0.000            ;
 +--------+-------+------------------+
 
 
@@ -446,106 +448,106 @@ No paths to report.
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -2.867 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.795      ;
-; -2.867 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.795      ;
-; -2.706 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.237      ;
-; -2.704 ; lcd:lcd|state.STATE23 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.631      ;
-; -2.696 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 3.228      ;
-; -2.695 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.623      ;
-; -2.668 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.592      ;
-; -2.642 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.173      ;
-; -2.627 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.551      ;
-; -2.626 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 3.158      ;
-; -2.614 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.532      ;
-; -2.589 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.517      ;
-; -2.588 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.515      ;
-; -2.586 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.514      ;
-; -2.581 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.509      ;
-; -2.570 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 3.102      ;
-; -2.570 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.101      ;
-; -2.560 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.466     ; 3.093      ;
-; -2.558 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.089      ;
-; -2.557 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.481      ;
-; -2.555 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 3.087      ;
-; -2.545 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.466     ; 3.078      ;
-; -2.542 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.470      ;
-; -2.535 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.463      ;
-; -2.529 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.457      ;
-; -2.512 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.440      ;
-; -2.507 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.435      ;
-; -2.504 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.812      ;
-; -2.504 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.812      ;
-; -2.497 ; lcd:lcd|count[2]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.422      ;
-; -2.492 ; lcd:lcd|count[0]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.417      ;
-; -2.460 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.385      ;
-; -2.459 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.384      ;
-; -2.457 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.385      ;
-; -2.452 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.380      ;
-; -2.450 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.379      ;
-; -2.445 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.374      ;
-; -2.435 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.364      ;
-; -2.430 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.359      ;
-; -2.427 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.355      ;
-; -2.422 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 2.954      ;
-; -2.411 ; lcd:lcd|counter_clear ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.470     ; 2.940      ;
-; -2.407 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 2.939      ;
-; -2.406 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.335      ;
-; -2.399 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.328      ;
-; -2.392 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.316      ;
-; -2.391 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.320      ;
-; -2.387 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.315      ;
-; -2.386 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.310      ;
-; -2.384 ; lcd:lcd|count[1]      ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.078     ; 3.305      ;
-; -2.384 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.313      ;
-; -2.382 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.310      ;
-; -2.380 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.308      ;
-; -2.377 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.295      ;
-; -2.371 ; lcd:lcd|state.STATE03 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.295      ;
-; -2.370 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.073     ; 3.296      ;
-; -2.362 ; lcd:lcd|count[1]      ; lcd:lcd|flag_40us     ; sysclk       ; sysclk      ; 1.000        ; -0.069     ; 3.292      ;
-; -2.362 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.289      ;
-; -2.360 ; lcd:lcd|count[1]      ; lcd:lcd|flag_200us    ; sysclk       ; sysclk      ; 1.000        ; -0.069     ; 3.290      ;
-; -2.359 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.277      ;
-; -2.358 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.276      ;
-; -2.353 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.281      ;
-; -2.349 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.073     ; 3.275      ;
-; -2.347 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.310      ; 3.656      ;
-; -2.347 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.310      ; 3.656      ;
-; -2.341 ; lcd:lcd|state.STATE23 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.308      ; 3.648      ;
-; -2.339 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.310      ; 3.648      ;
-; -2.339 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.310      ; 3.648      ;
-; -2.337 ; lcd:lcd|count[3]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.262      ;
-; -2.330 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.254      ;
-; -2.329 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.081     ; 3.247      ;
-; -2.321 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.250      ;
-; -2.319 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.627      ;
-; -2.317 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.245      ;
-; -2.316 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.245      ;
-; -2.313 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.073     ; 3.239      ;
-; -2.313 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.237      ;
-; -2.312 ; lcd:lcd|rs            ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.073     ; 3.238      ;
-; -2.311 ; lcd:lcd|rs            ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.073     ; 3.237      ;
-; -2.306 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.235      ;
-; -2.305 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.305      ; 3.609      ;
-; -2.301 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.230      ;
-; -2.295 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.222      ;
-; -2.291 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.220      ;
-; -2.279 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.190      ;
-; -2.276 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.205      ;
-; -2.274 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.202      ;
-; -2.251 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.299      ; 3.549      ;
-; -2.244 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.173      ;
-; -2.243 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.171      ;
-; -2.238 ; lcd:lcd|flag_100ms    ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.076     ; 3.161      ;
-; -2.235 ; lcd:lcd|busy_flag     ; lcd:lcd|d[1]          ; sysclk       ; sysclk      ; 1.000        ; 0.281      ; 3.515      ;
-; -2.233 ; lcd:lcd|count[1]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.158      ;
-; -2.229 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.070     ; 3.158      ;
-; -2.226 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.154      ;
-; -2.226 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.087     ; 3.138      ;
-; -2.225 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.308      ; 3.532      ;
-; -2.225 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.150      ;
-; -2.224 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.149      ;
-; -2.219 ; lcd:lcd|state.STATE04 ; lcd:lcd|e             ; sysclk       ; sysclk      ; 1.000        ; -0.465     ; 2.753      ;
+; -3.232 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.763      ;
+; -3.216 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 4.144      ;
+; -3.216 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 4.144      ;
+; -3.205 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 4.133      ;
+; -3.196 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 4.124      ;
+; -3.185 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 4.113      ;
+; -3.117 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.069     ; 4.047      ;
+; -3.109 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 4.037      ;
+; -3.108 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.639      ;
+; -3.084 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 4.009      ;
+; -3.067 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.995      ;
+; -3.055 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.983      ;
+; -3.046 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.974      ;
+; -3.035 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.963      ;
+; -2.985 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.913      ;
+; -2.982 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.909      ;
+; -2.975 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.899      ;
+; -2.965 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.890      ;
+; -2.954 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.879      ;
+; -2.949 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.874      ;
+; -2.947 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.872      ;
+; -2.946 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.477      ;
+; -2.945 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.873      ;
+; -2.925 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.856      ;
+; -2.925 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.853      ;
+; -2.919 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.850      ;
+; -2.905 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.836      ;
+; -2.901 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.466     ; 3.434      ;
+; -2.899 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.823      ;
+; -2.899 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.830      ;
+; -2.881 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.466     ; 3.414      ;
+; -2.878 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.471     ; 3.406      ;
+; -2.874 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.471     ; 3.402      ;
+; -2.853 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.764      ;
+; -2.852 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.075     ; 3.776      ;
+; -2.837 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 4.145      ;
+; -2.836 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 4.144      ;
+; -2.831 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.080     ; 3.750      ;
+; -2.826 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 4.134      ;
+; -2.816 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.743      ;
+; -2.816 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 4.124      ;
+; -2.810 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.741      ;
+; -2.807 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.468     ; 3.338      ;
+; -2.805 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 4.113      ;
+; -2.804 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.729      ;
+; -2.793 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.718      ;
+; -2.790 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.717      ;
+; -2.761 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.689      ;
+; -2.745 ; lcd:lcd|state.STATE03 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.673      ;
+; -2.737 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.311      ; 4.047      ;
+; -2.736 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 4.042      ;
+; -2.730 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 4.038      ;
+; -2.728 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.639      ;
+; -2.722 ; lcd:lcd|rs            ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.082     ; 3.639      ;
+; -2.716 ; lcd:lcd|counter_clear ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.644      ;
+; -2.702 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 4.008      ;
+; -2.694 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.619      ;
+; -2.687 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.995      ;
+; -2.686 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.617      ;
+; -2.678 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.606      ;
+; -2.676 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.984      ;
+; -2.675 ; lcd:lcd|rs            ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.595      ;
+; -2.672 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.600      ;
+; -2.666 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.974      ;
+; -2.655 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.586      ;
+; -2.655 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.963      ;
+; -2.650 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.469     ; 3.180      ;
+; -2.645 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.951      ;
+; -2.644 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.071     ; 3.572      ;
+; -2.644 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.569      ;
+; -2.637 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.945      ;
+; -2.635 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.566      ;
+; -2.634 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.940      ;
+; -2.612 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.539      ;
+; -2.605 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.913      ;
+; -2.602 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.529      ;
+; -2.600 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.908      ;
+; -2.594 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.900      ;
+; -2.593 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.306      ; 3.898      ;
+; -2.592 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.898      ;
+; -2.591 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.306      ; 3.896      ;
+; -2.585 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.512      ;
+; -2.584 ; lcd:lcd|rs            ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.079     ; 3.504      ;
+; -2.583 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.889      ;
+; -2.582 ; lcd:lcd|state.00000   ; lcd:lcd|d[0]          ; sysclk       ; sysclk      ; 1.000        ; -0.465     ; 3.116      ;
+; -2.577 ; lcd:lcd|state.00000   ; lcd:lcd|d[6]          ; sysclk       ; sysclk      ; 1.000        ; -0.467     ; 3.109      ;
+; -2.572 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.878      ;
+; -2.569 ; lcd:lcd|count[18]     ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.076     ; 3.492      ;
+; -2.567 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.498      ;
+; -2.567 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.873      ;
+; -2.566 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.309      ; 3.874      ;
+; -2.566 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.088     ; 3.477      ;
+; -2.565 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.307      ; 3.871      ;
+; -2.560 ; lcd:lcd|count[12]     ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.077     ; 3.482      ;
+; -2.557 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.090     ; 3.466      ;
+; -2.548 ; lcd:lcd|counter_clear ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.072     ; 3.475      ;
+; -2.547 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.466     ; 3.080      ;
+; -2.547 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.068     ; 3.478      ;
+; -2.547 ; lcd:lcd|count[7]      ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.074     ; 3.472      ;
+; -2.546 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.312      ; 3.857      ;
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -554,106 +556,106 @@ No paths to report.
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.339 ; lcd:lcd|state.STATE06                   ; lcd:lcd|state.STATE06                   ; sysclk       ; sysclk      ; 0.000        ; 0.087      ; 0.597      ;
-; 0.339 ; lcd:lcd|state.STATE17                   ; lcd:lcd|state.STATE17                   ; sysclk       ; sysclk      ; 0.000        ; 0.087      ; 0.597      ;
-; 0.339 ; lcd:lcd|state.STATE04                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.087      ; 0.597      ;
-; 0.339 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.087      ; 0.597      ;
-; 0.354 ; lcd:lcd|e                               ; lcd:lcd|e                               ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE05                   ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE25                   ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|flag_2ms                        ; lcd:lcd|flag_2ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|flag_250ns                      ; lcd:lcd|flag_250ns                      ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE21                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE20                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE18                   ; lcd:lcd|state.STATE18                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE03                   ; lcd:lcd|state.STATE03                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE02                   ; lcd:lcd|state.STATE02                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE16                   ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE15                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE12                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; lcd:lcd|state.STATE09                   ; lcd:lcd|state.STATE09                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.338 ; lcd:lcd|state.STATE06                   ; lcd:lcd|state.STATE06                   ; sysclk       ; sysclk      ; 0.000        ; 0.088      ; 0.597      ;
+; 0.338 ; lcd:lcd|state.STATE17                   ; lcd:lcd|state.STATE17                   ; sysclk       ; sysclk      ; 0.000        ; 0.088      ; 0.597      ;
+; 0.338 ; lcd:lcd|state.00000                     ; lcd:lcd|state.00000                     ; sysclk       ; sysclk      ; 0.000        ; 0.088      ; 0.597      ;
+; 0.338 ; lcd:lcd|state.STATE24                   ; lcd:lcd|state.STATE24                   ; sysclk       ; sysclk      ; 0.000        ; 0.088      ; 0.597      ;
+; 0.354 ; lcd:lcd|d[3]                            ; lcd:lcd|d[3]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|flag_100ms                      ; lcd:lcd|flag_100ms                      ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE01                   ; lcd:lcd|state.STATE01                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; lcd:lcd|rs                              ; lcd:lcd|rs                              ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|flag_5ms                        ; lcd:lcd|flag_5ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|flag_50ns                       ; lcd:lcd|flag_50ns                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|flag_40us                       ; lcd:lcd|flag_40us                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|flag_200us                      ; lcd:lcd|flag_200us                      ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|busy_flag                       ; lcd:lcd|busy_flag                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE16                   ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE07                   ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE05                   ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE12                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE18                   ; lcd:lcd|state.STATE18                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE15                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE21                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE14                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE11                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE20                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; lcd:lcd|start                           ; lcd:lcd|start                           ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; controller:controller|rom_address[2]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[1]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; controller:controller|rom_address[3]    ; controller:controller|rom_address[3]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; controller:controller|current_lcd_state ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; controller:controller|halt              ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.597      ;
-; 0.355 ; lcd:lcd|d[3]                            ; lcd:lcd|d[3]                            ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|flag_200us                      ; lcd:lcd|flag_200us                      ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; lcd:lcd|e                               ; lcd:lcd|e                               ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; lcd:lcd|state.STATE08                   ; lcd:lcd|state.STATE08                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE24                   ; lcd:lcd|state.STATE24                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE01                   ; lcd:lcd|state.STATE01                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.00000                     ; lcd:lcd|state.00000                     ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE07                   ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE23                   ; lcd:lcd|state.STATE23                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|busy_flag                       ; lcd:lcd|busy_flag                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|flag_40us                       ; lcd:lcd|flag_40us                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|flag_100ms                      ; lcd:lcd|flag_100ms                      ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|flag_5ms                        ; lcd:lcd|flag_5ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|flag_50ns                       ; lcd:lcd|flag_50ns                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE19                   ; lcd:lcd|state.STATE19                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE13                   ; lcd:lcd|state.STATE13                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE11                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; lcd:lcd|state.STATE04                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; lcd:lcd|flag_250ns                      ; lcd:lcd|flag_250ns                      ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; lcd:lcd|state.STATE10                   ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; controller:controller|data_ready        ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; controller:controller|current_lcd_state ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
-; 0.415 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.658      ;
-; 0.562 ; controller:controller|halt              ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.068      ; 0.801      ;
-; 0.590 ; lcd:lcd|count[21]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.833      ;
-; 0.593 ; lcd:lcd|count[22]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.836      ;
+; 0.355 ; lcd:lcd|state.STATE22                   ; lcd:lcd|state.STATE22                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.597      ;
+; 0.365 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.608      ;
+; 0.402 ; controller:controller|current_lcd_state ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.645      ;
+; 0.442 ; lcd:lcd|counter_clear                   ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.684      ;
+; 0.447 ; controller:controller|rom_address[0]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.690      ;
+; 0.552 ; controller:controller|rom_address[2]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.795      ;
+; 0.592 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.835      ;
+; 0.598 ; lcd:lcd|count[19]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.840      ;
+; 0.599 ; lcd:lcd|count[7]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.842      ;
 ; 0.599 ; lcd:lcd|count[1]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.842      ;
-; 0.600 ; lcd:lcd|count[17]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.843      ;
-; 0.601 ; lcd:lcd|count[18]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.844      ;
-; 0.602 ; lcd:lcd|count[13]                       ; lcd:lcd|count[13]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.845      ;
-; 0.604 ; lcd:lcd|count[14]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.847      ;
-; 0.605 ; lcd:lcd|count[16]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.848      ;
+; 0.600 ; lcd:lcd|count[20]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.842      ;
+; 0.600 ; lcd:lcd|count[15]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.842      ;
+; 0.603 ; lcd:lcd|count[5]                        ; lcd:lcd|count[5]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.846      ;
+; 0.603 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.846      ;
+; 0.604 ; lcd:lcd|count[8]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.847      ;
+; 0.605 ; lcd:lcd|count[21]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.847      ;
+; 0.605 ; lcd:lcd|count[14]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.847      ;
+; 0.605 ; lcd:lcd|count[11]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.848      ;
 ; 0.605 ; lcd:lcd|count[9]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.848      ;
-; 0.606 ; lcd:lcd|count[15]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.849      ;
-; 0.608 ; lcd:lcd|count[23]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.851      ;
-; 0.609 ; lcd:lcd|count[12]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.852      ;
+; 0.607 ; lcd:lcd|count[22]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.849      ;
+; 0.607 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.850      ;
+; 0.608 ; lcd:lcd|count[13]                       ; lcd:lcd|count[13]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.850      ;
+; 0.609 ; lcd:lcd|count[23]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.851      ;
+; 0.609 ; lcd:lcd|count[18]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.851      ;
 ; 0.609 ; lcd:lcd|count[10]                       ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.852      ;
-; 0.610 ; lcd:lcd|count[19]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.853      ;
-; 0.610 ; lcd:lcd|count[8]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.853      ;
-; 0.611 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.437      ; 1.219      ;
 ; 0.611 ; lcd:lcd|count[6]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.854      ;
-; 0.611 ; lcd:lcd|count[4]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.854      ;
-; 0.612 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.437      ; 1.220      ;
-; 0.612 ; lcd:lcd|count[20]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.855      ;
 ; 0.614 ; lcd:lcd|count[2]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.857      ;
-; 0.617 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[7]                            ; sysclk       ; sysclk      ; 0.000        ; 0.437      ; 1.225      ;
+; 0.615 ; lcd:lcd|state.STATE09                   ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.857      ;
 ; 0.617 ; lcd:lcd|count[3]                        ; lcd:lcd|count[3]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.860      ;
-; 0.619 ; lcd:lcd|state.STATE13                   ; lcd:lcd|d[0]                            ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.861      ;
-; 0.621 ; lcd:lcd|count[5]                        ; lcd:lcd|count[5]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.864      ;
-; 0.623 ; lcd:lcd|count[11]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.866      ;
-; 0.625 ; lcd:lcd|count[7]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.868      ;
-; 0.638 ; lcd:lcd|state.STATE25                   ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.469      ; 1.278      ;
-; 0.639 ; lcd:lcd|count[0]                        ; lcd:lcd|count[0]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.882      ;
-; 0.640 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.883      ;
-; 0.660 ; lcd:lcd|busy_flag                       ; lcd:lcd|state.STATE23                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.902      ;
-; 0.666 ; lcd:lcd|flag_250ns                      ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.469      ; 1.306      ;
-; 0.671 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.435      ; 1.277      ;
-; 0.671 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.435      ; 1.277      ;
-; 0.735 ; lcd:lcd|state.STATE03                   ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.467      ; 1.373      ;
-; 0.745 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.440      ; 1.356      ;
-; 0.765 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.007      ;
-; 0.812 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.074      ; 1.057      ;
-; 0.816 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.074      ; 1.061      ;
-; 0.824 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.437      ; 1.432      ;
-; 0.825 ; lcd:lcd|busy_flag                       ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.075      ; 1.071      ;
-; 0.836 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.079      ;
-; 0.859 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.070      ; 1.100      ;
-; 0.860 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE02                   ; sysclk       ; sysclk      ; 0.000        ; 0.070      ; 1.101      ;
-; 0.877 ; lcd:lcd|count[21]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.120      ;
-; 0.881 ; lcd:lcd|count[22]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.124      ;
+; 0.620 ; controller:controller|halt              ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.863      ;
+; 0.623 ; lcd:lcd|count[12]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.865      ;
+; 0.626 ; lcd:lcd|count[0]                        ; lcd:lcd|count[0]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.869      ;
+; 0.627 ; lcd:lcd|count[17]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.869      ;
+; 0.629 ; controller:controller|halt              ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.872      ;
+; 0.630 ; lcd:lcd|count[4]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.873      ;
+; 0.631 ; lcd:lcd|count[16]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.873      ;
+; 0.635 ; controller:controller|rom_address[2]    ; controller:controller|rom_address[3]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.878      ;
+; 0.642 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.885      ;
+; 0.651 ; controller:controller|old_reset         ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.894      ;
+; 0.657 ; controller:controller|rom_address[3]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.900      ;
+; 0.663 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[1]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.906      ;
+; 0.674 ; controller:controller|rom_address[1]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 0.917      ;
+; 0.677 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.919      ;
+; 0.716 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.958      ;
+; 0.717 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 0.959      ;
+; 0.762 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.005      ;
+; 0.808 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.068      ; 1.047      ;
+; 0.811 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.054      ;
+; 0.857 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[0]                            ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.100      ;
+; 0.885 ; lcd:lcd|count[19]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.127      ;
+; 0.885 ; lcd:lcd|count[7]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.128      ;
 ; 0.885 ; lcd:lcd|count[1]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.128      ;
-; 0.886 ; lcd:lcd|count[17]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.129      ;
-; 0.887 ; controller:controller|current_lcd_state ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.471      ; 1.529      ;
-; 0.889 ; lcd:lcd|count[13]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.132      ;
-; 0.889 ; lcd:lcd|count[18]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.132      ;
+; 0.886 ; lcd:lcd|count[15]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.128      ;
+; 0.888 ; lcd:lcd|count[11]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.075      ; 1.134      ;
+; 0.888 ; lcd:lcd|count[20]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.130      ;
+; 0.890 ; lcd:lcd|count[5]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.133      ;
 ; 0.891 ; lcd:lcd|count[9]                        ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.134      ;
-; 0.892 ; lcd:lcd|count[15]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.135      ;
-; 0.892 ; lcd:lcd|count[14]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.135      ;
-; 0.893 ; lcd:lcd|count[16]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.136      ;
-; 0.897 ; lcd:lcd|count[19]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.140      ;
+; 0.892 ; lcd:lcd|count[21]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.134      ;
+; 0.892 ; lcd:lcd|count[8]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.135      ;
+; 0.893 ; lcd:lcd|count[0]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.136      ;
+; 0.893 ; lcd:lcd|count[14]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.135      ;
+; 0.895 ; lcd:lcd|count[13]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.137      ;
+; 0.895 ; lcd:lcd|count[22]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.137      ;
+; 0.897 ; lcd:lcd|count[18]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.071      ; 1.139      ;
+; 0.897 ; lcd:lcd|count[10]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.140      ;
+; 0.899 ; lcd:lcd|count[6]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.072      ; 1.142      ;
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -668,7 +670,7 @@ No synchronizer chains to report.
 +--------+--------+------------------+
 ; Clock  ; Slack  ; End Point TNS    ;
 +--------+--------+------------------+
-; sysclk ; -1.053 ; -28.174          ;
+; sysclk ; -1.184 ; -41.924          ;
 +--------+--------+------------------+
 
 
@@ -698,7 +700,7 @@ No paths to report.
 +--------+--------+--------------------------------+
 ; Clock  ; Slack  ; End Point TNS                  ;
 +--------+--------+--------------------------------+
-; sysclk ; -3.000 ; -86.059                        ;
+; sysclk ; -3.000 ; -85.948                        ;
 +--------+--------+--------------------------------+
 
 
@@ -707,106 +709,106 @@ No paths to report.
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -1.053 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.999      ;
-; -1.046 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.992      ;
-; -0.981 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.917      ;
-; -0.966 ; lcd:lcd|state.STATE23 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.911      ;
-; -0.953 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.043     ; 1.897      ;
-; -0.953 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.043     ; 1.897      ;
-; -0.948 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.894      ;
-; -0.918 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.661      ;
-; -0.913 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.858      ;
-; -0.912 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.655      ;
-; -0.901 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.847      ;
-; -0.897 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.640      ;
-; -0.894 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.637      ;
-; -0.894 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.840      ;
-; -0.891 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.634      ;
-; -0.888 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.043     ; 1.832      ;
-; -0.873 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.818      ;
-; -0.873 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.616      ;
-; -0.872 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.817      ;
-; -0.871 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.012      ;
-; -0.864 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.005      ;
-; -0.860 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.806      ;
-; -0.855 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.801      ;
-; -0.854 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.800      ;
-; -0.848 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.784      ;
-; -0.848 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.794      ;
-; -0.847 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.793      ;
-; -0.843 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.789      ;
-; -0.838 ; lcd:lcd|count[0]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.046     ; 1.779      ;
-; -0.838 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.582      ;
-; -0.837 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.581      ;
-; -0.837 ; lcd:lcd|count[2]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.046     ; 1.778      ;
-; -0.831 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.767      ;
-; -0.822 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.758      ;
-; -0.817 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.561      ;
-; -0.816 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.560      ;
-; -0.805 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.750      ;
-; -0.803 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.748      ;
-; -0.801 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.737      ;
-; -0.799 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.144      ; 1.930      ;
-; -0.794 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.935      ;
-; -0.793 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.739      ;
-; -0.793 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.537      ;
-; -0.792 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.933      ;
-; -0.792 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.043     ; 1.736      ;
-; -0.792 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.536      ;
-; -0.788 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.734      ;
-; -0.787 ; lcd:lcd|state.STATE03 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.732      ;
-; -0.787 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.733      ;
-; -0.787 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.928      ;
-; -0.785 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.043     ; 1.729      ;
-; -0.785 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.926      ;
-; -0.784 ; lcd:lcd|state.STATE23 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.153      ; 1.924      ;
-; -0.782 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.728      ;
-; -0.780 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.727      ;
-; -0.779 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.726      ;
-; -0.775 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.722      ;
-; -0.774 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.721      ;
-; -0.774 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.721      ;
-; -0.773 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.720      ;
-; -0.771 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.152      ; 1.910      ;
-; -0.769 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.714      ;
-; -0.767 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.714      ;
-; -0.766 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.907      ;
-; -0.766 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.713      ;
-; -0.763 ; lcd:lcd|counter_clear ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.245     ; 1.505      ;
-; -0.763 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.043     ; 1.707      ;
-; -0.762 ; lcd:lcd|count[1]      ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.047     ; 1.702      ;
-; -0.762 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.707      ;
-; -0.762 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.707      ;
-; -0.761 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.706      ;
-; -0.758 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.704      ;
-; -0.751 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.688      ;
-; -0.751 ; lcd:lcd|count[3]      ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.046     ; 1.692      ;
-; -0.750 ; lcd:lcd|flag_60us     ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.687      ;
-; -0.749 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.695      ;
-; -0.746 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.692      ;
-; -0.742 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.679      ;
-; -0.741 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.678      ;
-; -0.738 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.683      ;
-; -0.738 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.674      ;
-; -0.733 ; lcd:lcd|count[1]      ; lcd:lcd|flag_40us     ; sysclk       ; sysclk      ; 1.000        ; -0.038     ; 1.682      ;
-; -0.731 ; lcd:lcd|count[1]      ; lcd:lcd|flag_200us    ; sysclk       ; sysclk      ; 1.000        ; -0.038     ; 1.680      ;
-; -0.731 ; lcd:lcd|flag_200us    ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.051     ; 1.667      ;
-; -0.731 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.153      ; 1.871      ;
-; -0.730 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.668      ;
-; -0.730 ; lcd:lcd|count[15]     ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.668      ;
-; -0.725 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.671      ;
-; -0.724 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.670      ;
-; -0.724 ; lcd:lcd|rs            ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.669      ;
-; -0.724 ; lcd:lcd|count[20]     ; lcd:lcd|flag_100ms    ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.662      ;
-; -0.722 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; 0.144      ; 1.853      ;
-; -0.720 ; lcd:lcd|flag_50ns     ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.144      ; 1.851      ;
-; -0.719 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.860      ;
-; -0.713 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.660      ;
-; -0.712 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.650      ;
-; -0.712 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 1.853      ;
-; -0.712 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.659      ;
-; -0.709 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.647      ;
-; -0.708 ; lcd:lcd|state.STATE02 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.655      ;
+; -1.184 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.131      ;
+; -1.180 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.923      ;
+; -1.155 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.045     ; 2.097      ;
+; -1.149 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.096      ;
+; -1.146 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.093      ;
+; -1.144 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.091      ;
+; -1.134 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.081      ;
+; -1.133 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.080      ;
+; -1.132 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.078      ;
+; -1.132 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.875      ;
+; -1.129 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.075      ;
+; -1.103 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.049      ;
+; -1.099 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.046      ;
+; -1.084 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.030      ;
+; -1.081 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 2.018      ;
+; -1.078 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.024      ;
+; -1.071 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 2.016      ;
+; -1.070 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.813      ;
+; -1.065 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.011      ;
+; -1.062 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 2.009      ;
+; -1.057 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 2.003      ;
+; -1.047 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.993      ;
+; -1.045 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.245     ; 1.787      ;
+; -1.044 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.991      ;
+; -1.044 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.989      ;
+; -1.041 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.987      ;
+; -1.034 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.045     ; 1.976      ;
+; -1.031 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.775      ;
+; -1.023 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.767      ;
+; -1.016 ; lcd:lcd|state.STATE03 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.962      ;
+; -1.016 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.963      ;
+; -1.015 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.245     ; 1.757      ;
+; -1.009 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.956      ;
+; -1.008 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.955      ;
+; -1.005 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.952      ;
+; -1.004 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.951      ;
+; -0.997 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.942      ;
+; -0.996 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.942      ;
+; -0.990 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.132      ;
+; -0.990 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.937      ;
+; -0.986 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.924      ;
+; -0.986 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.729      ;
+; -0.976 ; lcd:lcd|counter_clear ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.922      ;
+; -0.968 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.915      ;
+; -0.959 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.150      ; 2.096      ;
+; -0.957 ; lcd:lcd|flag_5ms      ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.150      ; 2.094      ;
+; -0.956 ; lcd:lcd|state.STATE22 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.902      ;
+; -0.955 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.097      ;
+; -0.954 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.900      ;
+; -0.952 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.094      ;
+; -0.949 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.896      ;
+; -0.949 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.091      ;
+; -0.949 ; lcd:lcd|state.STATE19 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.895      ;
+; -0.946 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.087      ;
+; -0.944 ; lcd:lcd|state.STATE24 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.244     ; 1.687      ;
+; -0.939 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.081      ;
+; -0.939 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.081      ;
+; -0.938 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.079      ;
+; -0.937 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.875      ;
+; -0.933 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.074      ;
+; -0.927 ; lcd:lcd|rs            ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.864      ;
+; -0.923 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.869      ;
+; -0.915 ; lcd:lcd|state.STATE16 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.044     ; 1.858      ;
+; -0.915 ; lcd:lcd|flag_250ns    ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.861      ;
+; -0.913 ; lcd:lcd|state.STATE20 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.859      ;
+; -0.911 ; lcd:lcd|rs            ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.849      ;
+; -0.908 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.049      ;
+; -0.904 ; lcd:lcd|state.STATE11 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.851      ;
+; -0.904 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.046      ;
+; -0.903 ; lcd:lcd|state.STATE12 ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.041     ; 1.849      ;
+; -0.901 ; lcd:lcd|state.STATE09 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.848      ;
+; -0.898 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.039      ;
+; -0.893 ; lcd:lcd|flag_2ms      ; lcd:lcd|state.STATE01 ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.830      ;
+; -0.893 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.045     ; 1.835      ;
+; -0.889 ; lcd:lcd|state.STATE04 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.030      ;
+; -0.885 ; lcd:lcd|busy_flag     ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.045     ; 1.827      ;
+; -0.885 ; lcd:lcd|flag_60us     ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.145      ; 2.017      ;
+; -0.883 ; lcd:lcd|flag_60us     ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.145      ; 2.015      ;
+; -0.882 ; lcd:lcd|state.STATE01 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.023      ;
+; -0.881 ; lcd:lcd|count[12]     ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.046     ; 1.822      ;
+; -0.876 ; lcd:lcd|state.STATE17 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.814      ;
+; -0.875 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.153      ; 2.015      ;
+; -0.875 ; lcd:lcd|state.STATE08 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.153      ; 2.015      ;
+; -0.874 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.015      ;
+; -0.873 ; lcd:lcd|count[22]     ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.811      ;
+; -0.873 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.153      ; 2.013      ;
+; -0.871 ; lcd:lcd|state.STATE25 ; lcd:lcd|state.STATE06 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.012      ;
+; -0.871 ; lcd:lcd|state.STATE14 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.012      ;
+; -0.871 ; lcd:lcd|state.STATE18 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.012      ;
+; -0.869 ; lcd:lcd|state.STATE13 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.816      ;
+; -0.868 ; lcd:lcd|state.STATE15 ; lcd:lcd|state.STATE17 ; sysclk       ; sysclk      ; 1.000        ; 0.155      ; 2.010      ;
+; -0.868 ; lcd:lcd|counter_clear ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.038     ; 1.817      ;
+; -0.863 ; lcd:lcd|count[7]      ; lcd:lcd|flag_5ms      ; sysclk       ; sysclk      ; 1.000        ; -0.042     ; 1.808      ;
+; -0.862 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.809      ;
+; -0.862 ; lcd:lcd|state.STATE06 ; lcd:lcd|state.00000   ; sysclk       ; sysclk      ; 1.000        ; -0.050     ; 1.799      ;
+; -0.861 ; lcd:lcd|state.STATE10 ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.040     ; 1.808      ;
+; -0.861 ; lcd:lcd|state.STATE21 ; lcd:lcd|state.STATE24 ; sysclk       ; sysclk      ; 1.000        ; 0.154      ; 2.002      ;
+; -0.859 ; lcd:lcd|count[18]     ; lcd:lcd|flag_250ns    ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.797      ;
+; -0.857 ; lcd:lcd|rs            ; lcd:lcd|state.STATE04 ; sysclk       ; sysclk      ; 1.000        ; -0.049     ; 1.795      ;
+; -0.856 ; lcd:lcd|state.00000   ; lcd:lcd|state.STATE08 ; sysclk       ; sysclk      ; 1.000        ; -0.243     ; 1.600      ;
 +--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -817,104 +819,104 @@ No paths to report.
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.174 ; lcd:lcd|state.STATE06                   ; lcd:lcd|state.STATE06                   ; sysclk       ; sysclk      ; 0.000        ; 0.049      ; 0.307      ;
 ; 0.174 ; lcd:lcd|state.STATE17                   ; lcd:lcd|state.STATE17                   ; sysclk       ; sysclk      ; 0.000        ; 0.049      ; 0.307      ;
-; 0.174 ; lcd:lcd|state.STATE04                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.049      ; 0.307      ;
-; 0.174 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.049      ; 0.307      ;
-; 0.181 ; lcd:lcd|flag_2ms                        ; lcd:lcd|flag_2ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.307      ;
+; 0.174 ; lcd:lcd|state.00000                     ; lcd:lcd|state.00000                     ; sysclk       ; sysclk      ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; lcd:lcd|state.STATE24                   ; lcd:lcd|state.STATE24                   ; sysclk       ; sysclk      ; 0.000        ; 0.049      ; 0.307      ;
+; 0.181 ; lcd:lcd|flag_100ms                      ; lcd:lcd|flag_100ms                      ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; lcd:lcd|busy_flag                       ; lcd:lcd|busy_flag                       ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; lcd:lcd|start                           ; lcd:lcd|start                           ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.182 ; lcd:lcd|d[3]                            ; lcd:lcd|d[3]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|e                               ; lcd:lcd|e                               ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|flag_200us                      ; lcd:lcd|flag_200us                      ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|state.STATE08                   ; lcd:lcd|state.STATE08                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE24                   ; lcd:lcd|state.STATE24                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE04                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|state.STATE01                   ; lcd:lcd|state.STATE01                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.00000                     ; lcd:lcd|state.00000                     ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE05                   ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE07                   ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE23                   ; lcd:lcd|state.STATE23                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|busy_flag                       ; lcd:lcd|busy_flag                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE25                   ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|flag_40us                       ; lcd:lcd|flag_40us                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|flag_100ms                      ; lcd:lcd|flag_100ms                      ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|rs                              ; lcd:lcd|rs                              ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|flag_5ms                        ; lcd:lcd|flag_5ms                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|flag_50ns                       ; lcd:lcd|flag_50ns                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|flag_250ns                      ; lcd:lcd|flag_250ns                      ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE21                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE20                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE19                   ; lcd:lcd|state.STATE19                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE18                   ; lcd:lcd|state.STATE18                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE03                   ; lcd:lcd|state.STATE03                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE02                   ; lcd:lcd|state.STATE02                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE16                   ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE15                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE13                   ; lcd:lcd|state.STATE13                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE12                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE11                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|flag_40us                       ; lcd:lcd|flag_40us                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|flag_200us                      ; lcd:lcd|flag_200us                      ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; lcd:lcd|state.STATE10                   ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|state.STATE09                   ; lcd:lcd|state.STATE09                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; lcd:lcd|rs                              ; lcd:lcd|rs                              ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; controller:controller|data_ready        ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE22                   ; lcd:lcd|state.STATE22                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE16                   ; lcd:lcd|state.STATE16                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE07                   ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE05                   ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE12                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE18                   ; lcd:lcd|state.STATE18                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE15                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE21                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE14                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE11                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE20                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; controller:controller|rom_address[2]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[1]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; controller:controller|rom_address[3]    ; controller:controller|rom_address[3]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; controller:controller|current_lcd_state ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; controller:controller|halt              ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.307      ;
-; 0.199 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.324      ;
-; 0.274 ; controller:controller|halt              ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.036      ; 0.394      ;
-; 0.285 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.230      ; 0.599      ;
-; 0.285 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.230      ; 0.599      ;
-; 0.291 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[7]                            ; sysclk       ; sysclk      ; 0.000        ; 0.230      ; 0.605      ;
-; 0.294 ; lcd:lcd|count[21]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.419      ;
-; 0.296 ; lcd:lcd|count[22]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.421      ;
-; 0.298 ; lcd:lcd|count[1]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.424      ;
-; 0.300 ; lcd:lcd|count[17]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.425      ;
-; 0.300 ; lcd:lcd|count[13]                       ; lcd:lcd|count[13]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.425      ;
-; 0.301 ; lcd:lcd|count[18]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.426      ;
-; 0.302 ; lcd:lcd|count[16]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.427      ;
+; 0.189 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.314      ;
+; 0.192 ; controller:controller|current_lcd_state ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.317      ;
+; 0.229 ; lcd:lcd|counter_clear                   ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.354      ;
+; 0.230 ; controller:controller|rom_address[0]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.355      ;
+; 0.278 ; controller:controller|rom_address[2]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.403      ;
+; 0.289 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.414      ;
+; 0.299 ; lcd:lcd|count[20]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.424      ;
+; 0.299 ; lcd:lcd|count[19]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.424      ;
+; 0.299 ; lcd:lcd|count[1]                        ; lcd:lcd|count[1]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.424      ;
+; 0.300 ; lcd:lcd|count[15]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.425      ;
+; 0.300 ; lcd:lcd|count[7]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.425      ;
+; 0.301 ; lcd:lcd|count[5]                        ; lcd:lcd|count[5]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.426      ;
+; 0.302 ; lcd:lcd|count[21]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.427      ;
 ; 0.302 ; lcd:lcd|count[14]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.427      ;
-; 0.303 ; lcd:lcd|count[10]                       ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.429      ;
-; 0.303 ; lcd:lcd|count[9]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.429      ;
-; 0.304 ; lcd:lcd|count[15]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.429      ;
-; 0.304 ; lcd:lcd|count[12]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.429      ;
-; 0.304 ; lcd:lcd|count[4]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.430      ;
+; 0.302 ; lcd:lcd|count[8]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.427      ;
+; 0.302 ; lcd:lcd|state.STATE11                   ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.427      ;
+; 0.303 ; lcd:lcd|count[22]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.428      ;
+; 0.303 ; lcd:lcd|count[11]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.428      ;
+; 0.304 ; lcd:lcd|count[13]                       ; lcd:lcd|count[13]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.429      ;
+; 0.304 ; lcd:lcd|count[9]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.429      ;
+; 0.304 ; lcd:lcd|state.STATE20                   ; lcd:lcd|state.STATE21                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.429      ;
 ; 0.305 ; lcd:lcd|count[23]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.430      ;
-; 0.305 ; lcd:lcd|count[8]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.431      ;
-; 0.305 ; lcd:lcd|count[6]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.431      ;
-; 0.306 ; lcd:lcd|state.STATE13                   ; lcd:lcd|d[0]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.431      ;
-; 0.306 ; lcd:lcd|count[19]                       ; lcd:lcd|count[19]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.431      ;
-; 0.307 ; lcd:lcd|count[20]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.432      ;
-; 0.309 ; lcd:lcd|count[3]                        ; lcd:lcd|count[3]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.435      ;
-; 0.309 ; lcd:lcd|count[2]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.435      ;
-; 0.311 ; lcd:lcd|count[5]                        ; lcd:lcd|count[5]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.437      ;
-; 0.313 ; lcd:lcd|count[11]                       ; lcd:lcd|count[11]                       ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.439      ;
-; 0.315 ; lcd:lcd|count[7]                        ; lcd:lcd|count[7]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.441      ;
-; 0.322 ; lcd:lcd|count[0]                        ; lcd:lcd|count[0]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.448      ;
-; 0.323 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.230      ; 0.637      ;
-; 0.323 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.230      ; 0.637      ;
-; 0.325 ; lcd:lcd|state.STATE25                   ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.244      ; 0.653      ;
-; 0.326 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE05                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.451      ;
-; 0.328 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.231      ; 0.643      ;
-; 0.328 ; lcd:lcd|flag_250ns                      ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.244      ; 0.656      ;
-; 0.339 ; lcd:lcd|busy_flag                       ; lcd:lcd|state.STATE23                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.464      ;
-; 0.376 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.501      ;
-; 0.391 ; lcd:lcd|state.STATE16                   ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.234      ; 0.709      ;
-; 0.401 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.527      ;
-; 0.404 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.530      ;
-; 0.404 ; lcd:lcd|busy_flag                       ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.530      ;
-; 0.408 ; lcd:lcd|state.STATE03                   ; lcd:lcd|counter_clear                   ; sysclk       ; sysclk      ; 0.000        ; 0.244      ; 0.736      ;
-; 0.412 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.537      ;
-; 0.422 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE12                   ; sysclk       ; sysclk      ; 0.000        ; 0.040      ; 0.546      ;
-; 0.423 ; controller:controller|current_lcd_state ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.249      ; 0.756      ;
-; 0.424 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE02                   ; sysclk       ; sysclk      ; 0.000        ; 0.040      ; 0.548      ;
-; 0.435 ; controller:controller|rom_address[1]    ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.228      ; 0.747      ;
-; 0.440 ; controller:controller|rom_address[2]    ; lcd:lcd|d[1]                            ; sysclk       ; sysclk      ; 0.000        ; 0.228      ; 0.752      ;
-; 0.443 ; lcd:lcd|count[21]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.568      ;
-; 0.447 ; lcd:lcd|count[1]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.573      ;
-; 0.447 ; controller:controller|halt              ; controller:controller|rom_address[0]    ; sysclk       ; sysclk      ; 0.000        ; 0.244      ; 0.775      ;
-; 0.449 ; lcd:lcd|count[17]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.574      ;
-; 0.449 ; lcd:lcd|count[13]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.574      ;
-; 0.452 ; lcd:lcd|count[9]                        ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.578      ;
-; 0.453 ; lcd:lcd|count[15]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.578      ;
-; 0.454 ; lcd:lcd|state.STATE03                   ; lcd:lcd|state.STATE04                   ; sysclk       ; sysclk      ; 0.000        ; 0.243      ; 0.781      ;
-; 0.454 ; lcd:lcd|count[22]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.579      ;
+; 0.305 ; lcd:lcd|count[10]                       ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.430      ;
+; 0.306 ; lcd:lcd|count[18]                       ; lcd:lcd|count[18]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.431      ;
+; 0.306 ; lcd:lcd|count[6]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.431      ;
+; 0.309 ; lcd:lcd|state.STATE09                   ; lcd:lcd|state.STATE10                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.434      ;
+; 0.310 ; lcd:lcd|count[3]                        ; lcd:lcd|count[3]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.435      ;
+; 0.310 ; lcd:lcd|count[2]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.435      ;
+; 0.311 ; controller:controller|halt              ; controller:controller|data_ready        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.436      ;
+; 0.312 ; lcd:lcd|count[12]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.437      ;
+; 0.316 ; lcd:lcd|count[0]                        ; lcd:lcd|count[0]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.441      ;
+; 0.317 ; lcd:lcd|count[17]                       ; lcd:lcd|count[17]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.442      ;
+; 0.317 ; lcd:lcd|count[4]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.442      ;
+; 0.318 ; lcd:lcd|count[16]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.443      ;
+; 0.321 ; controller:controller|halt              ; controller:controller|current_lcd_state ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.446      ;
+; 0.323 ; controller:controller|rom_address[2]    ; controller:controller|rom_address[3]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.448      ;
+; 0.323 ; controller:controller|old_reset         ; controller:controller|halt              ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.448      ;
+; 0.328 ; controller:controller|rom_address[1]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.453      ;
+; 0.339 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[1]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.464      ;
+; 0.340 ; controller:controller|rom_address[3]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.465      ;
+; 0.344 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE25                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.469      ;
+; 0.352 ; controller:controller|rom_address[1]    ; lcd:lcd|d[6]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.477      ;
+; 0.354 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[5]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.479      ;
+; 0.355 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[4]                            ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.480      ;
+; 0.368 ; lcd:lcd|state.STATE14                   ; lcd:lcd|state.STATE15                   ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.493      ;
+; 0.390 ; controller:controller|rom_address[0]    ; controller:controller|rom_address[2]    ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.515      ;
+; 0.399 ; lcd:lcd|flag_250ns                      ; lcd:lcd|state.STATE07                   ; sysclk       ; sysclk      ; 0.000        ; 0.040      ; 0.523      ;
+; 0.440 ; lcd:lcd|state.STATE23                   ; lcd:lcd|d[0]                            ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.566      ;
+; 0.448 ; lcd:lcd|count[19]                       ; lcd:lcd|count[20]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.573      ;
+; 0.448 ; lcd:lcd|count[1]                        ; lcd:lcd|count[2]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.573      ;
+; 0.448 ; lcd:lcd|count[11]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.045      ; 0.577      ;
+; 0.449 ; lcd:lcd|count[7]                        ; lcd:lcd|count[8]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.574      ;
+; 0.449 ; lcd:lcd|count[15]                       ; lcd:lcd|count[16]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.574      ;
+; 0.450 ; lcd:lcd|count[5]                        ; lcd:lcd|count[6]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.575      ;
+; 0.451 ; lcd:lcd|count[21]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.576      ;
+; 0.453 ; lcd:lcd|d[2]                            ; lcd:lcd|d[2]                            ; sysclk       ; sysclk      ; 0.000        ; 0.042      ; 0.579      ;
+; 0.453 ; lcd:lcd|count[13]                       ; lcd:lcd|count[14]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.578      ;
+; 0.453 ; lcd:lcd|count[9]                        ; lcd:lcd|count[10]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.578      ;
+; 0.457 ; lcd:lcd|count[20]                       ; lcd:lcd|count[21]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.582      ;
+; 0.459 ; lcd:lcd|count[3]                        ; lcd:lcd|count[4]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.584      ;
+; 0.460 ; lcd:lcd|count[14]                       ; lcd:lcd|count[15]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.585      ;
+; 0.460 ; lcd:lcd|count[8]                        ; lcd:lcd|count[9]                        ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.585      ;
+; 0.460 ; lcd:lcd|count[20]                       ; lcd:lcd|count[22]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.585      ;
+; 0.461 ; lcd:lcd|count[22]                       ; lcd:lcd|count[23]                       ; sysclk       ; sysclk      ; 0.000        ; 0.041      ; 0.586      ;
+; 0.462 ; lcd:lcd|count[10]                       ; lcd:lcd|count[12]                       ; sysclk       ; sysclk      ; 0.000        ; 0.045      ; 0.591      ;
 +-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -929,10 +931,10 @@ No synchronizer chains to report.
 +------------------+----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -3.273   ; 0.174 ; N/A      ; N/A     ; -3.000              ;
-;  sysclk          ; -3.273   ; 0.174 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -137.246 ; 0.0   ; 0.0      ; 0.0     ; -103.23             ;
-;  sysclk          ; -137.246 ; 0.000 ; N/A      ; N/A     ; -103.230            ;
+; Worst-case Slack ; -3.617   ; 0.174 ; N/A      ; N/A     ; -3.000              ;
+;  sysclk          ; -3.617   ; 0.174 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -166.529 ; 0.0   ; 0.0      ; 0.0     ; -103.23             ;
+;  sysclk          ; -166.529 ; 0.000 ; N/A      ; N/A     ; -103.230            ;
 +------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -961,8 +963,8 @@ No synchronizer chains to report.
 +-------------------------+--------------+-----------------+-----------------+
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
-; push_button             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sysclk                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; push_button             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -1034,7 +1036,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; sysclk     ; sysclk   ; 1485     ; 0        ; 0        ; 0        ;
+; sysclk     ; sysclk   ; 1816     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1044,7 +1046,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; sysclk     ; sysclk   ; 1485     ; 0        ; 0        ; 0        ;
+; sysclk     ; sysclk   ; 1816     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1068,10 +1070,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 10    ; 10   ;
-; Unconstrained Output Port Paths ; 10    ; 10   ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 69    ; 69   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
 +---------------------------------+-------+------+
 
 
@@ -1084,6 +1086,15 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------+--------+------+-------------+
 
 
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; push_button ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------+
 ; Unconstrained Output Ports                                                                          ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -1096,12 +1107,20 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; d[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; d[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; d[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; d[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; e           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; rs          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; push_button ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------+
 ; Unconstrained Output Ports                                                                          ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -1114,7 +1133,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; d[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; d[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; d[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; d[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; e           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; rs          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -1126,7 +1144,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Sep 23 21:22:14 2021
+    Info: Processing started: Thu Sep 23 23:01:51 2021
 Info: Command: quartus_sta lcd -c lcd
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1143,10 +1161,10 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.273
+Info (332146): Worst-case setup slack is -3.617
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.273            -137.246 sysclk 
+    Info (332119):    -3.617            -166.529 sysclk 
 Info (332146): Worst-case hold slack is 0.385
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1163,14 +1181,14 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.867
+Info (332146): Worst-case setup slack is -3.232
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.867            -117.896 sysclk 
-Info (332146): Worst-case hold slack is 0.339
+    Info (332119):    -3.232            -144.938 sysclk 
+Info (332146): Worst-case hold slack is 0.338
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.339               0.000 sysclk 
+    Info (332119):     0.338               0.000 sysclk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
@@ -1181,10 +1199,10 @@ Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.053
+Info (332146): Worst-case setup slack is -1.184
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.053             -28.174 sysclk 
+    Info (332119):    -1.184             -41.924 sysclk 
 Info (332146): Worst-case hold slack is 0.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1194,13 +1212,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -86.059 sysclk 
+    Info (332119):    -3.000             -85.948 sysclk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Thu Sep 23 21:22:16 2021
+    Info: Peak virtual memory: 4893 megabytes
+    Info: Processing ended: Thu Sep 23 23:01:53 2021
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
