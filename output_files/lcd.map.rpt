@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lcd
-Thu Sep 23 19:55:04 2021
+Thu Sep 23 21:21:44 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,14 +13,15 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |lcd|state
+  8. State Machine - |top|lcd:lcd|state
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |lcd
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: lcd:lcd
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +48,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 23 19:55:04 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 23 21:21:44 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; lcd                                         ;
-; Top-level Entity Name              ; lcd                                         ;
+; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 190                                         ;
+; Total logic elements               ; 189                                         ;
 ;     Total combinational functions  ; 189                                         ;
-;     Dedicated logic registers      ; 71                                          ;
-; Total registers                    ; 71                                          ;
-; Total pins                         ; 23                                          ;
+;     Dedicated logic registers      ; 78                                          ;
+; Total registers                    ; 78                                          ;
+; Total pins                         ; 12                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; lcd                ; lcd                ;
+; Top-level entity name                                            ; top                ; lcd                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -167,60 +168,64 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                            ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path              ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
-; lcd.v                            ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Trabalho_03_lcd/lcd.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; lcd.v                            ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/lcd.v ;         ;
+; top.v                            ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 190         ;
-;                                             ;             ;
-; Total combinational functions               ; 189         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 113         ;
-;     -- 3 input functions                    ; 30          ;
-;     -- <=2 input functions                  ; 46          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 166         ;
-;     -- arithmetic mode                      ; 23          ;
-;                                             ;             ;
-; Total registers                             ; 71          ;
-;     -- Dedicated logic registers            ; 71          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 23          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 71          ;
-; Total fan-out                               ; 853         ;
-; Average fan-out                             ; 2.79        ;
-+---------------------------------------------+-------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 189          ;
+;                                             ;              ;
+; Total combinational functions               ; 189          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 116          ;
+;     -- 3 input functions                    ; 33           ;
+;     -- <=2 input functions                  ; 40           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 166          ;
+;     -- arithmetic mode                      ; 23           ;
+;                                             ;              ;
+; Total registers                             ; 78           ;
+;     -- Dedicated logic registers            ; 78           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 12           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; sysclk~input ;
+; Maximum fan-out                             ; 78           ;
+; Total fan-out                               ; 863          ;
+; Average fan-out                             ; 2.97         ;
++---------------------------------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |lcd                       ; 189 (189)           ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |lcd                ; lcd         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-------------+--------------+
+; |top                       ; 189 (0)             ; 78 (0)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |top                       ; top         ; work         ;
+;    |controller:controller| ; 11 (11)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:controller ; controller  ; work         ;
+;    |lcd:lcd|               ; 170 (170)           ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|lcd:lcd               ; lcd         ; work         ;
+;    |rom:rom|               ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|rom:rom               ; rom         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |lcd|state                                                                                                                                                                                                                                                                                                                                                                                                                  ;
+; State Machine - |top|lcd:lcd|state                                                                                                                                                                                                                                                                                                                                                                                                          ;
 +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-------------+
 ; Name          ; state.STATE25 ; state.STATE24 ; state.STATE23 ; state.STATE22 ; state.STATE21 ; state.STATE20 ; state.STATE19 ; state.STATE18 ; state.STATE17 ; state.STATE16 ; state.STATE15 ; state.STATE14 ; state.STATE13 ; state.STATE12 ; state.STATE11 ; state.STATE10 ; state.STATE09 ; state.STATE08 ; state.STATE07 ; state.STATE06 ; state.STATE05 ; state.STATE04 ; state.STATE03 ; state.STATE02 ; state.STATE01 ; state.00000 ;
 +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-------------+
@@ -253,18 +258,31 @@ Encoding Type:  One-Hot
 +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; state~28                              ; Lost fanout        ;
-; state~29                              ; Lost fanout        ;
-; state~30                              ; Lost fanout        ;
-; state~31                              ; Lost fanout        ;
-; state~32                              ; Lost fanout        ;
-; Total Number of Removed Registers = 5 ;                    ;
-+---------------------------------------+--------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; last_signal                           ; Stuck at GND due to stuck port data_in ;
+; internal_reset                        ; Stuck at GND due to stuck port data_in ;
+; controller:controller|old_reset       ; Stuck at GND due to stuck port data_in ;
+; lcd:lcd|state~28                      ; Lost fanout                            ;
+; lcd:lcd|state~29                      ; Lost fanout                            ;
+; lcd:lcd|state~30                      ; Lost fanout                            ;
+; lcd:lcd|state~31                      ; Lost fanout                            ;
+; lcd:lcd|state~32                      ; Lost fanout                            ;
+; Total Number of Removed Registers = 8 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; last_signal   ; Stuck at GND              ; internal_reset                         ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -272,9 +290,9 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 71    ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 3     ;
+; Total registers                              ; 78    ;
+; Number of registers using Synchronous Clear  ; 33    ;
+; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 6     ;
@@ -287,55 +305,55 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; Yes        ; |lcd|d[1]~reg0             ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |lcd|d[3]~reg0             ;
-; 11:1               ; 3 bits    ; 21 LEs        ; 12 LEs               ; 9 LEs                  ; No         ; |lcd|Selector12            ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |lcd|Selector28            ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |lcd|Selector19            ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; Yes        ; |top|lcd:lcd|d[1]          ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top|lcd:lcd|d[0]          ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; No         ; |top|lcd:lcd|Selector12    ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 6 LEs                ; 22 LEs                 ; No         ; |top|lcd:lcd|Selector28    ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 6 LEs                ; 22 LEs                 ; No         ; |top|lcd:lcd|Selector19    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |lcd ;
-+----------------+-----------+----------------------------------------+
-; Parameter Name ; Value     ; Type                                   ;
-+----------------+-----------+----------------------------------------+
-; CLK_FREQ       ; 100000000 ; Signed Integer                         ;
-; D_50ns         ; 5         ; Signed Integer                         ;
-; D_250ns        ; 25        ; Signed Integer                         ;
-; D_40us         ; 4000      ; Signed Integer                         ;
-; D_60us         ; 6000      ; Signed Integer                         ;
-; D_200us        ; 20000     ; Signed Integer                         ;
-; D_2ms          ; 200000    ; Signed Integer                         ;
-; D_5ms          ; 500000    ; Signed Integer                         ;
-; D_100ms        ; 10000000  ; Signed Integer                         ;
-; STATE00        ; 00000     ; Unsigned Binary                        ;
-; STATE01        ; 00001     ; Unsigned Binary                        ;
-; STATE02        ; 00010     ; Unsigned Binary                        ;
-; STATE03        ; 00011     ; Unsigned Binary                        ;
-; STATE04        ; 00100     ; Unsigned Binary                        ;
-; STATE05        ; 00101     ; Unsigned Binary                        ;
-; STATE06        ; 00110     ; Unsigned Binary                        ;
-; STATE07        ; 00111     ; Unsigned Binary                        ;
-; STATE08        ; 01000     ; Unsigned Binary                        ;
-; STATE09        ; 01001     ; Unsigned Binary                        ;
-; STATE10        ; 01010     ; Unsigned Binary                        ;
-; STATE11        ; 01011     ; Unsigned Binary                        ;
-; STATE12        ; 01100     ; Unsigned Binary                        ;
-; STATE13        ; 01101     ; Unsigned Binary                        ;
-; STATE14        ; 01110     ; Unsigned Binary                        ;
-; STATE15        ; 01111     ; Unsigned Binary                        ;
-; STATE16        ; 10000     ; Unsigned Binary                        ;
-; STATE17        ; 10001     ; Unsigned Binary                        ;
-; STATE18        ; 10010     ; Unsigned Binary                        ;
-; STATE19        ; 10011     ; Unsigned Binary                        ;
-; STATE20        ; 10100     ; Unsigned Binary                        ;
-; STATE21        ; 10101     ; Unsigned Binary                        ;
-; STATE22        ; 10110     ; Unsigned Binary                        ;
-; STATE23        ; 10111     ; Unsigned Binary                        ;
-; STATE24        ; 11000     ; Unsigned Binary                        ;
-; STATE25        ; 11001     ; Unsigned Binary                        ;
-+----------------+-----------+----------------------------------------+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd:lcd ;
++----------------+-----------+-------------------------+
+; Parameter Name ; Value     ; Type                    ;
++----------------+-----------+-------------------------+
+; CLK_FREQ       ; 100000000 ; Signed Integer          ;
+; D_50ns         ; 5         ; Signed Integer          ;
+; D_250ns        ; 25        ; Signed Integer          ;
+; D_40us         ; 4000      ; Signed Integer          ;
+; D_60us         ; 6000      ; Signed Integer          ;
+; D_200us        ; 20000     ; Signed Integer          ;
+; D_2ms          ; 200000    ; Signed Integer          ;
+; D_5ms          ; 500000    ; Signed Integer          ;
+; D_100ms        ; 10000000  ; Signed Integer          ;
+; STATE00        ; 00000     ; Unsigned Binary         ;
+; STATE01        ; 00001     ; Unsigned Binary         ;
+; STATE02        ; 00010     ; Unsigned Binary         ;
+; STATE03        ; 00011     ; Unsigned Binary         ;
+; STATE04        ; 00100     ; Unsigned Binary         ;
+; STATE05        ; 00101     ; Unsigned Binary         ;
+; STATE06        ; 00110     ; Unsigned Binary         ;
+; STATE07        ; 00111     ; Unsigned Binary         ;
+; STATE08        ; 01000     ; Unsigned Binary         ;
+; STATE09        ; 01001     ; Unsigned Binary         ;
+; STATE10        ; 01010     ; Unsigned Binary         ;
+; STATE11        ; 01011     ; Unsigned Binary         ;
+; STATE12        ; 01100     ; Unsigned Binary         ;
+; STATE13        ; 01101     ; Unsigned Binary         ;
+; STATE14        ; 01110     ; Unsigned Binary         ;
+; STATE15        ; 01111     ; Unsigned Binary         ;
+; STATE16        ; 10000     ; Unsigned Binary         ;
+; STATE17        ; 10001     ; Unsigned Binary         ;
+; STATE18        ; 10010     ; Unsigned Binary         ;
+; STATE19        ; 10011     ; Unsigned Binary         ;
+; STATE20        ; 10100     ; Unsigned Binary         ;
+; STATE21        ; 10101     ; Unsigned Binary         ;
+; STATE22        ; 10110     ; Unsigned Binary         ;
+; STATE23        ; 10111     ; Unsigned Binary         ;
+; STATE24        ; 11000     ; Unsigned Binary         ;
+; STATE25        ; 11001     ; Unsigned Binary         ;
++----------------+-----------+-------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -344,23 +362,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 23                          ;
-; cycloneiii_ff         ; 71                          ;
+; boundary_port         ; 12                          ;
+; cycloneiii_ff         ; 78                          ;
 ;     ENA               ; 3                           ;
-;     ENA SLD           ; 3                           ;
+;     ENA SCLR          ; 1                           ;
+;     ENA SLD           ; 2                           ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 33                          ;
+;     plain             ; 40                          ;
 ; cycloneiii_lcell_comb ; 189                         ;
 ;     arith             ; 23                          ;
 ;         2 data inputs ; 23                          ;
 ;     normal            ; 166                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 113                         ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 116                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.85                        ;
+; Average LUT depth     ; 3.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -379,30 +398,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Sep 23 19:54:49 2021
+    Info: Processing started: Thu Sep 23 21:21:27 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lcd -c lcd
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 5 design units, including 5 entities, in source file lcd.v
-    Info (12023): Found entity 1: top File: E:/Documents/GitHub/Trabalho_03_lcd/lcd.v Line: 1
-    Info (12023): Found entity 2: lcd File: E:/Documents/GitHub/Trabalho_03_lcd/lcd.v Line: 71
-    Info (12023): Found entity 3: controller File: E:/Documents/GitHub/Trabalho_03_lcd/lcd.v Line: 443
-    Info (12023): Found entity 4: debounce File: E:/Documents/GitHub/Trabalho_03_lcd/lcd.v Line: 524
-    Info (12023): Found entity 5: rom File: E:/Documents/GitHub/Trabalho_03_lcd/lcd.v Line: 560
-Info (12127): Elaborating entity "lcd" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at lcd.v(178): truncated value with size 32 to match size of target (24) File: E:/Documents/GitHub/Trabalho_03_lcd/lcd.v Line: 178
+Info (12021): Found 3 design units, including 3 entities, in source file lcd.v
+    Info (12023): Found entity 1: lcd File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/lcd.v Line: 3
+    Info (12023): Found entity 2: controller File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/lcd.v Line: 375
+    Info (12023): Found entity 3: rom File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/lcd.v Line: 455
+Info (12021): Found 1 design units, including 1 entities, in source file top.v
+    Info (12023): Found entity 1: top File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 1
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10858): Verilog HDL warning at top.v(17): object clean_signal used but never assigned File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 17
+Warning (10030): Net "clean_signal" at top.v(17) has no driver or initial value, using a default initial value '0' File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 17
+Info (12128): Elaborating entity "lcd" for hierarchy "lcd:lcd" File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 34
+Warning (10230): Verilog HDL assignment warning at lcd.v(110): truncated value with size 32 to match size of target (24) File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/lcd.v Line: 110
+Info (12128): Elaborating entity "rom" for hierarchy "rom:rom" File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 39
+Info (12128): Elaborating entity "controller" for hierarchy "controller:controller" File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 47
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 214 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 191 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Thu Sep 23 19:55:04 2021
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:27
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "push_button" File: E:/Documents/GitHub/Trabalho_03_lcd/Trabalho_03_LCD/top.v Line: 10
+Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 189 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Thu Sep 23 21:21:44 2021
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:32
 
 

@@ -1,72 +1,4 @@
-module top(
-  sysclk,
-  push_button,
-  rs,
-  e,
-  d
-);
 
-input sysclk;
-input push_button;
-output rs;
-output e;
-output [7:0] d;
-
-reg internal_reset = 1'b0;
-reg last_signal = 1'b0;
-wire clean_signal;
-wire data_ready;
-wire lcd_busy;
-
-wire [8:0] d_in;
-
-wire [3:0] rom_in;
-
-lcd lcd(
-  .clock(sysclk),
-  .internal_reset(internal_reset),
-  .d_in(d_in),
-  .data_ready(data_ready),
-  .rs(rs),
-  .e(e),
-  .d(d),
-  .busy_flag(lcd_busy)
-  );
-
-rom rom(
-.rom_in(rom_in),
-.rom_out(d_in)
-);
-
-controller controller (
-  .clock(sysclk),
-  .lcd_busy(lcd_busy),
-  .internal_reset(internal_reset),
-  .rom_address(rom_in),
-  .data_ready(data_ready)
-);
-
-debounce debounce(
-  .clk (sysclk),
-  .in  (push_button),
-  .out (clean_signal)
- );
-
-always @ (posedge sysclk) begin
-  if (last_signal != clean_signal) begin
-    last_signal <= clean_signal;
-    if (clean_signal == 1'b0) begin
-      internal_reset <= 1'b1;
-    end
-  end
-  else begin
-    internal_reset <= 1'b0;
-  end
-end
-
-endmodule
-
-//-------------------------------------------------------
 
 module lcd(
   clock,
@@ -519,43 +451,6 @@ endmodule
 
 
 
-//------------------------------------
-
-module debounce (
-  clk,
-  in,
-  out
-  );
-
-input clk;
-input in;
-output out;
-
-reg out;
-
-wire delta;
-reg [19:0] timer;
-
-initial timer = 20'b0;
-initial out = 1'b0;
-
-assign delta = ~in ^ out;     //negative logic on pushbutton 
-
-always @(posedge clk) begin
-  if (timer[19]) begin
-    out <= ~in;               
-    timer <= 20'b0;
-  end
-  else if (delta) begin
-    timer <= timer + 20'b1;
-  end
-  else begin
-    timer <= 20'b0;
-  end
-end
-
-
-endmodule
 //--------------------------------------
 module rom (
 rom_in   , // Address input

@@ -1,5 +1,5 @@
 
-State Machine - |lcd|state
+State Machine - |top|lcd:lcd|state
 Name state.STATE25 state.STATE24 state.STATE23 state.STATE22 state.STATE21 state.STATE20 state.STATE19 state.STATE18 state.STATE17 state.STATE16 state.STATE15 state.STATE14 state.STATE13 state.STATE12 state.STATE11 state.STATE10 state.STATE09 state.STATE08 state.STATE07 state.STATE06 state.STATE05 state.STATE04 state.STATE03 state.STATE02 state.STATE01 state.00000 
 state.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.STATE01 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

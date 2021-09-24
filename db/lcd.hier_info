@@ -1,4 +1,22 @@
-|lcd
+|top
+sysclk => lcd:lcd.clock
+sysclk => controller:controller.clock
+sysclk => internal_reset.CLK
+sysclk => last_signal.CLK
+push_button => ~NO_FANOUT~
+rs << lcd:lcd.rs
+e << lcd:lcd.e
+d[0] << lcd:lcd.d[0]
+d[1] << lcd:lcd.d[1]
+d[2] << lcd:lcd.d[2]
+d[3] << lcd:lcd.d[3]
+d[4] << lcd:lcd.d[4]
+d[5] << lcd:lcd.d[5]
+d[6] << lcd:lcd.d[6]
+d[7] << lcd:lcd.d[7]
+
+
+|top|lcd:lcd
 clock => e~reg0.CLK
 clock => d[0]~reg0.CLK
 clock => d[1]~reg0.CLK
@@ -95,5 +113,55 @@ d[5] <= d[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d[6] <= d[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d[7] <= d[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 busy_flag <= busy_flag~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|rom:rom
+rom_in[0] => Decoder0.IN3
+rom_in[1] => Decoder0.IN2
+rom_in[2] => Decoder0.IN1
+rom_in[3] => Decoder0.IN0
+rom_out[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[2] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[4] <= rom_out.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+rom_out[8] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|controller:controller
+clock => old_reset.CLK
+clock => halt.CLK
+clock => current_lcd_state.CLK
+clock => data_ready~reg0.CLK
+clock => rom_address[0]~reg0.CLK
+clock => rom_address[1]~reg0.CLK
+clock => rom_address[2]~reg0.CLK
+clock => rom_address[3]~reg0.CLK
+lcd_busy => always0.IN1
+lcd_busy => always0.IN1
+lcd_busy => current_lcd_state.DATAB
+lcd_busy => data_ready.OUTPUTSELECT
+lcd_busy => rom_address.OUTPUTSELECT
+lcd_busy => rom_address.OUTPUTSELECT
+lcd_busy => rom_address.OUTPUTSELECT
+lcd_busy => rom_address.OUTPUTSELECT
+internal_reset => rom_address.OUTPUTSELECT
+internal_reset => rom_address.OUTPUTSELECT
+internal_reset => rom_address.OUTPUTSELECT
+internal_reset => rom_address.OUTPUTSELECT
+internal_reset => data_ready.OUTPUTSELECT
+internal_reset => current_lcd_state.OUTPUTSELECT
+internal_reset => halt.OUTPUTSELECT
+internal_reset => always0.IN1
+internal_reset => halt.OUTPUTSELECT
+internal_reset => old_reset.DATAIN
+rom_address[0] <= rom_address[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rom_address[1] <= rom_address[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rom_address[2] <= rom_address[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rom_address[3] <= rom_address[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_ready <= data_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
