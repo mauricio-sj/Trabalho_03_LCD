@@ -1,62 +1,61 @@
 module top(
+  number,
+  control,
   sysclk,
   push_button,
   rs,
+  rw,
   e,
-  d
+  d,
+  lcd_on
 );
 
+input [4:0]number;
+input control;
+
 input sysclk;
-input push_button;
+output push_button;
 output rs;
+output rw;
 output e;
 output [7:0] d;
+output lcd_on;
 
-reg internal_reset = 1'b0;
-reg last_signal = 1'b0;
-wire clean_signal;
+assign lcd_on = 1;
 wire data_ready;
 wire lcd_busy;
 
 wire [8:0] d_in;
 
-wire [3:0] rom_in;
+wire [5:0] rom_in;
 
-lcd lcd(
+virtual_input INPUT(.number(number), .control(control), .button3(push_button));
+
+lcd LCD(
   .clock(sysclk),
-  .internal_reset(internal_reset),
+  .internal_reset(push_button),
   .d_in(d_in),
   .data_ready(data_ready),
   .rs(rs),
+  .rw(rw),
   .e(e),
   .d(d),
   .busy_flag(lcd_busy)
   );
 
-rom rom(
+
+rom ROM(
 .rom_in(rom_in),
 .rom_out(d_in)
 );
 
-controller controller (
+controller CONTROLLER(
   .clock(sysclk),
   .lcd_busy(lcd_busy),
-  .internal_reset(internal_reset),
+  .internal_reset(push_button),
   .rom_address(rom_in),
   .data_ready(data_ready)
 );
-
-always @ (posedge sysclk) begin
-  if (last_signal != clean_signal) begin
-    last_signal <= clean_signal;
-    if (clean_signal == 1'b0) begin
-      internal_reset <= 1'b1;
-    end
-  end
-  else begin
-    internal_reset <= 1'b0;
-  end
-end
 
 endmodule
 
