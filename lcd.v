@@ -3,6 +3,7 @@ module lcd(
   internal_reset,
   d_in,
   data_ready,
+  rw,
   rs,
   e,
   d,
@@ -324,15 +325,17 @@ case (state)
 // End Initialization - Start entering data.
 
   STATE23: begin
-    if (counter_clear) begin      // wait for data  
+    if (counter_clear) 
+    begin      // wait for data  
       start <= 1'b0;                    // clear the start flag
       rs <= d_in[8];                    // read the RS value from input       
       d  <= d_in[7:0];                  // read the data value input 
-      end  
-    else if (flag_50ns && !counter_clear) begin	 // if 50ns have elapsed
+    end  
+    else if (flag_50ns && !counter_clear) 
+    begin	 // if 50ns have elapsed
        counter_clear <= 1'b1;           // clear the counter
        state <= STATE24;                // advance to the next state
-       end
+    end
   end
 
   STATE24: begin   
@@ -346,16 +349,19 @@ case (state)
   end
 
   STATE25: begin
-    if (counter_clear) begin            // if this is the first iteration of STATE25
-		busy_flag <= 1'b1;
-		e <= 1'b0; 		// Bring E low
+    if (counter_clear) 
+    begin            // if this is the first iteration of STATE25
+      busy_flag <= 1'b1;
+      e <= 1'b0; 		// Bring E low
     end
-    else if (flag_40us && !counter_clear && rs) begin  // if data is a character and 40us has elapsed
+    else if (flag_40us && !counter_clear && rs) 
+    begin  // if data is a character and 40us has elapsed
       busy_flag <= 1'b0;                // clear the busy flag
       counter_clear <= 1'b1;            // clear the counter 
       state <= STATE23;                 // go back to STATE23 and wait for next data
     end
-    else if (flag_2ms && !counter_clear) begin // if data is a command and 2ms has elapsed
+    else if (flag_2ms && !counter_clear) 
+    begin // if data is a command and 2ms has elapsed
 		busy_flag <= 1'b0;                // clear the busy flag
       counter_clear <= 1'b1;            // clear the counter 
       state <= STATE23;                 // go back to STATE23 and wait for next data

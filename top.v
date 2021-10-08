@@ -7,7 +7,8 @@ module top(
   rw,
   e,
   d,
-  lcd_on
+  LCD_ON,
+  LCD_BLON,
 );
 
 input [4:0]number;
@@ -19,9 +20,11 @@ output rs;
 output rw;
 output e;
 output [7:0] d;
-output lcd_on;
+output LCD_ON;
+output LCD_BLON;
 
-assign lcd_on = 1;
+assign LCD_BLON = 1;
+assign LCD_ON = 1;
 wire data_ready;
 wire lcd_busy;
 
