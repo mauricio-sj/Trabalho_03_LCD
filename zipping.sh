@@ -1,1 +1,1 @@
-zip trab.zip /*.v
+zip trab.zip *.v

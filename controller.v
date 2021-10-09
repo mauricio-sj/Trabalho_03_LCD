@@ -17,7 +17,6 @@ reg data_ready = 1'b0;
 reg current_lcd_state = 1'b0;
 reg halt = 1'b0;
 
-reg old_reset = 1'b0;
 
 always @ (posedge clock) begin
 
@@ -27,16 +26,6 @@ always @ (posedge clock) begin
      data_ready <= 1'b0;            
      current_lcd_state <= 1'b0;
      halt <= 1'b0;
-  end
-
-// prepara para a reinicialização lançando a parada quando o push button
-// é pressionado (o reset será executado quando o botão é liberado)
-
-  if (old_reset != internal_reset) begin
-    old_reset <= internal_reset;
-     if (internal_reset == 1'b0) begin
-       halt <= 1'b0;
-     end
   end
    
 

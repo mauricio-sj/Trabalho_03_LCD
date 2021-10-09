@@ -48,7 +48,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name VERILOG_FILE lcd.v
 set_location_assignment PIN_L4 -to e
 set_location_assignment PIN_M2 -to rs
 set_location_assignment PIN_L3 -to d[0]
@@ -60,10 +59,14 @@ set_location_assignment PIN_K2 -to d[5]
 set_location_assignment PIN_M3 -to d[6]
 set_location_assignment PIN_M5 -to d[7]
 set_location_assignment PIN_M1 -to busy_flag
-set_global_assignment -name VERILOG_FILE top.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE virtual_input.v
+set_global_assignment -name VERILOG_FILE lcd.v
+set_global_assignment -name VERILOG_FILE top.v
 set_global_assignment -name VERILOG_FILE controller.v
 set_global_assignment -name VERILOG_FILE rom.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
